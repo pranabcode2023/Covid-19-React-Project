@@ -1,17 +1,7 @@
-.App {
+/* .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -22,17 +12,239 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+/* ************************ searchbar***************************** */
+
+
+/* .Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.FormControl {
+  width: 100%;
+  max-width: 30rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.FormControl:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.Button {
+  margin-left: 20rem;
+  border-radius: 0.25rem;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.Button:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.Button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+} */
+
+/* **************************body**************************************** */
+
+
+*{
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+/* 
++++++++++++++++++++ cards  ++++++++++++++++++++++ */
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+ 
+  padding: 0.5rem;
+}
+
+img{
+  width: 100%;
+  
+  border: 2px solid #ddd;
+  box-shadow: rgb(168, 72, 72);
+ 
+
+}
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+    /* overflow: hidden; */
+  perspective: 1000px;
+    /* margin: 0.5rem; */
+  padding: 0;
+    /* Remove this if you don't want the 3D effect */
+  
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #f1f1f1;
+}
+
+.flip-card-back {
+  background-color: #f9f9f9;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.image-fluid {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+
+
+/* +++++++++++++++++++++++ pagination ++++++++++++++++++ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  font-size: 16px;
+  padding: 10px 15px;
+  margin-right: 5px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #f5f5f5;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+
+/* **********************************Country page ********************************* */
+
+/* Container */
+.country-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header */
+.country-header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Checkboxes */
+.country-checkbox {
+  margin-right: 1rem;
+}
+
+/* List */
+.country-list {
+  list-style: none;
+  padding: 0;
+}
+
+.country-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Pagination */
+.country-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.country-pagination li {
+  margin-right: 0.5rem;
+}
+
+.country-pagination button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.country-pagination button:hover {
+  background-color: #0069d9;
+}
+
+.country-pagination .active button {
+  background-color: #0069d9;
 }
