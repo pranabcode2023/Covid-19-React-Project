@@ -1,16 +1,15 @@
 import React from 'react';
-
 import Countries from '../Components/Countries';
-import LoginForm from '../Components/LoginForm';
+
 
 function Homepage() {
 
 
     return (
         <div>
-            <p>Click on the links above to view information about different countries and symptoms</p>
+            <h1>Covid-19 Worldwide</h1>
             <Countries />
-            <LoginForm />
+
         </div>
     );
 }

@@ -1,114 +1,3 @@
-// import React from 'react'
-// import { Link, NavLink, useLocation } from 'react-router-dom'
-
-// function NavBar() {
-//     const location = useLocation();
-//     const linkStyle = {
-//         color: "red",
-//         fontSize: "large"
-//     }
-
-//     return (
-//         <div>
-//             <h1>NavBar</h1>
-//             {/* <div style={{ display: "flex", gap: "1em" }}>
-//         <Link style={location.pathname === '/' ? linkStyle : null} to='/'>HomePage</Link>
-//         <Link style={location.pathname === '/about' ? linkStyle : null} to='about' state={ "send this message to about page" }>About</Link>
-//       </div> */}
-
-//             <div style={{ display: "flex", gap: "1em", textAlign: "center" }}>
-//                 <NavLink to='/' style={({ isActive }) => isActive ? linkStyle : null}>HomePage</NavLink>
-//                 <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>About</NavLink>
-//             </div>
-
-//         </div>
-//     )
-// }
-
-// export default NavBar
-
-
-// import React from 'react';
-// import { Link, NavLink, useLocation } from 'react-router-dom'
-// import Button from 'react-bootstrap/Button';
-// import Container from 'react-bootstrap/Container';
-// import Form from 'react-bootstrap/Form';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
-// import Offcanvas from 'react-bootstrap/Offcanvas';
-
-// function OffcanvasExample() {
-
-//     const location = useLocation();
-//     const linkStyle = {
-//         color: "red",
-//         fontSize: "large"
-//     }
-
-//     return (
-//         <>
-//             {
-//                 [false].map((expand) => (
-//                     <Navbar key={expand} bg="light" expand={expand} className="mb-3">
-//                         <Container fluid>
-//                             {/* <Navbar.Brand href="Homepage.js">Navbar Offcanvas</Navbar.Brand> */}
-
-//                             <Link style={location.pathname === '/' ? linkStyle : null} to='/'>HomePage</Link>
-//                             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-//                             <Navbar.Offcanvas
-//                                 id={`offcanvasNavbar-expand-${expand}`}
-//                                 aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-//                                 placement="end"
-//                             >
-//                                 <Offcanvas.Header closeButton>
-//                                     <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-//                                         Offcanvas
-//                                     </Offcanvas.Title>
-//                                 </Offcanvas.Header>
-//                                 <Offcanvas.Body>
-//                                     <Nav className="justify-content-end flex-grow-1 pe-3">
-//                                         {/* <Nav.Link href="#Homepage.js">Home</Nav.Link> */}
-//                                         <Link style={location.pathname === '/' ? linkStyle : null} to='/'>HomePage</Link>
-
-//                                         {/* <Nav.Link href="#Countries.js">Link</Nav.Link> */}
-//                                         <Link style={location.pathname === '/about' ? linkStyle : null}
-//                                             to='about' state={"send this message to about page"}>About</Link>
-//                                         <NavDropdown
-//                                             title="Dropdown"
-//                                             id={`offcanvasNavbarDropdown-expand-${expand}`}
-//                                         >
-//                                             <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-//                                             <NavDropdown.Item href="#action4">
-//                                                 Another action
-//                                             </NavDropdown.Item>
-//                                             <NavDropdown.Divider />
-//                                             <NavDropdown.Item href="#action5">
-//                                                 Something else here
-//                                             </NavDropdown.Item>
-//                                         </NavDropdown>
-//                                     </Nav>
-//                                     <Form className="d-flex">
-//                                         <Form.Control
-//                                             type="search"
-//                                             placeholder="Search"
-//                                             className="me-2"
-//                                             aria-label="Search"
-//                                         />
-//                                         <Button variant="outline-success">Search</Button>
-//                                     </Form>
-//                                 </Offcanvas.Body>
-//                             </Navbar.Offcanvas>
-//                         </Container>
-//                     </Navbar>
-//                 ))
-//             }
-//         </>
-//     );
-// }
-
-// export default OffcanvasExample;
-
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
@@ -149,6 +38,7 @@ function RegistrationForm() {
 function LoginForm() {
     return (
         <Form className="d-flex">
+
             <Form.Control type="email" placeholder="Email" className="me-2" />
             <Form.Control type="password" placeholder="Password" className="me-2" />
             <Button variant="primary" >Login</Button>
@@ -156,11 +46,26 @@ function LoginForm() {
     );
 }
 
+// function LoginForm() {
+//     return (
+//         <Form className="d-flex">
+//             <Form.Control type="email" placeholder="Email" className="me-2" />
+//             <Form.Control type="password" placeholder="Password" className="me-2" />
+//             <Button variant="primary">Login</Button>
+//             <div className="d-flex">
+//                 <a href="#">Forgot Password</a>
+//                 <a href="#">Login with Gmail</a>
+//             </div>
+//         </Form>
+//     );
+// }
+
 function OffcanvasExample() {
     const location = useLocation();
     const linkStyle = {
-        color: "red",
-        fontSize: "large"
+        color: "black",
+        fontSize: "25px",
+        textDecoration: "bold",
     };
 
     return (
@@ -168,9 +73,10 @@ function OffcanvasExample() {
             {[false].map((expand) => (
                 <Navbar key={expand} bg="light" expand={expand} className="mb-3">
                     <Container fluid>
-                        <Link style={location.pathname === "/" ? linkStyle : null} to="/">
+                        {/* <Link style={location.pathname === "/" ? linkStyle : null} to="/">
                             HomePage
-                        </Link>
+                        </Link> */}
+                        <NavLink to='/' style={({ isActive }) => isActive ? linkStyle : null}>HomePage</NavLink>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -179,35 +85,42 @@ function OffcanvasExample() {
                         >
                             <Offcanvas.Header closeButton>
                                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                                    Offcanvas
+                                    Navigation
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                                    <Link style={location.pathname === "/" ? linkStyle : null} to="/">
+                                    {/* <Link style={location.pathname === "/" ? linkStyle : null} to="/">
                                         HomePage
-                                    </Link>
-                                    <Link
+                                    </Link> */}
+                                    <NavLink to='/' style={({ isActive }) => isActive ? linkStyle : null}>HomePage</NavLink>
+                                    {/* <Link
                                         style={location.pathname === "/about" ? linkStyle : null}
                                         to="about"
                                         state={"send this message to about page"}
                                     >
                                         About
-                                    </Link>
+                                    </Link> */}
+                                    <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>About</NavLink>
+                                    {location.pathname.includes("about") ?
+                                        <>
+
+                                            <NavLink to='/About/Country' style={({ isActive }) => isActive ? linkStyle : null}>Country</NavLink>
+                                            <NavLink to='/About/Vaccines' style={({ isActive }) => isActive ? linkStyle : null}>Vaccines</NavLink>
+                                        </>
+                                        : null}
+                                    <hr />
                                     <NavDropdown
-                                        title="Dropdown"
-                                        id={`offcanvasNavbarDropdown-expand-${expand}`}
-                                    >
-                                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action4">
-                                            Another action
-                                        </NavDropdown.Item>
+                                        title="Show More"
+                                        id={`offcanvasNavbarDropdown-expand-${expand}`}>
+                                        {/* <NavLink to='/History' style={({ isActive }) => isActive ? linkStyle : null}>History</NavLink>
+                                        <NavLink to='/Usa' style={({ isActive }) => isActive ? linkStyle : null}>Usa</NavLink> */}
                                         <NavDropdown.Divider />
-                                        <NavDropdown.Item href="#action5">
-                                            Something else here
-                                        </NavDropdown.Item>
+                                        {/* <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>About</NavLink> */}
                                     </NavDropdown>
+                                    <hr />
                                 </Nav>
+                                <hr />
                                 <LoginForm />
                                 <hr />
                                 <RegistrationForm />

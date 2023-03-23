@@ -1,7 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
-import Country from '../Components/Country'
-import Graph from '../Components/Graph';
+import { Outlet, useLocation } from 'react-router-dom'
 
 
 function About() {
@@ -10,9 +8,12 @@ function About() {
 
     return (
         <div>
-            <h1>About Page</h1>
-            <Country />
-            <Graph />
+            {location.pathname.includes("Country") || location.pathname.includes("Vaccines") ? <Outlet /> :
+                <>
+                    <h1>About Page</h1>
+                    <p>This page blah blah</p>
+                </>
+            }
         </div>
     )
 }

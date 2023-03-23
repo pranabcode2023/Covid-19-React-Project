@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Graph = () => {
+const History = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const Graph = () => {
     )
 }
 
-export default Graph
+export default History
