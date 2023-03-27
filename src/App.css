@@ -1,18 +1,56 @@
-/* .App {
+/* **************************body**************************************** */
+
+
+* {
+  box-sizing: border-box;
   text-align: center;
+
+  /* color: #ddd; */
 }
 
+/* *********************************  backgroundimage  *************************** */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* .bg-image-wrapper {
+  background-image: url('./Images/offwhitebackground_img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 } */
+
+
+/* *********************navbar********************* */
+
+/* Style for active link */
+.nav-link.active {
+  color: red;
+}
+
+/* Style for Offcanvas Navbar */
+.navbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav-link {
+  color: #343a40;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.offcanvas-title {
+  color: #343a40;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.offcanvas-body {
+  padding: 20px;
+}
+
 
 /* ************************ searchbar***************************** */
 
@@ -38,35 +76,34 @@ input[type="text"] {
 }
 
 
+/* +++++++++++++++++++ Hompage   cards  ++++++++++++++++++++++ */
 
-
-
-/* **************************body**************************************** */
-
-
-*{
-  box-sizing: border-box;
-  text-align: center;
-}
-
-
-/* 
-+++++++++++++++++++ cards  ++++++++++++++++++++++ */
-
-.container {
+ .container {
   max-width: auto;
   margin: 0 auto;
-  /* border: 2px solid red; */
+  border: 2px solid rgb(218, 218, 41);
+  overflow:hidden;
 }
-
-
 
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* center the cards horizontally */
+  align-items: center;
+  /* center the cards vertically */
   margin-top: 20px;
+  border: 2px solid red;
 }
+
+
+/* .cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  border: 2px solid red;
+}  */
 
 .flip-card {
   background-color: transparent;
@@ -74,7 +111,9 @@ input[type="text"] {
   height: 400px;
   perspective: 1000px;
   margin: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 15%;
+  /* margin-right: 10%; */
+  box-shadow: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   cursor: pointer;
 }
@@ -103,7 +142,7 @@ input[type="text"] {
 }
 
 .flip-card-front {
-  background-color: #f5f5f5;
+  background-color: grey;
   color: black;
 }
 
@@ -124,8 +163,55 @@ input[type="text"] {
 }
 
 .fs-4 {
-  font-size: 1.5rem !important;
+  font-size: 1.5rem ;
 }
+
+/* ******modal******** */
+
+.modal {
+  display: none;
+  /* Hide the modal by default */
+  position: fixed;
+  /* Position the modal relative to the viewport */
+  /* z-index: 1; */
+  /* Set the modal to be on top of other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Enable scrolling if the content is too tall */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Add a semi-transparent background color */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #dbdde4;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* +++++++++++++++++++++++ pagination ++++++++++++++++++ */
 
 .pagination {
   display: flex;
@@ -134,7 +220,6 @@ input[type="text"] {
 }
 
 
-/* +++++++++++++++++++++++ pagination ++++++++++++++++++ */
 .pagination li {
   margin: 0 5px;
 }
@@ -157,72 +242,47 @@ input[type="text"] {
   cursor: default;
 }
 
-
+/* @media screen and (max-width: 768px) {
+  .flip-card {
+    width: 100%;
+    max-width: 200px;
+    height: 300px;
+    margin: 20px auto;
+  }
+}
+ */
 
 /* **********************************Country page ********************************* */
 
-/* Container */
-.country-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
 
-/* Header */
-.country-header {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
+/* **************map********************** */
 
-/* Checkboxes */
-.country-checkbox {
-  margin-right: 1rem;
-}
 
-/* List */
-.country-list {
-  list-style: none;
-  padding: 0;
-}
+/* ************************** PieChart****************************** */
 
-.country-list li {
-  margin-bottom: 0.5rem;
-}
-
-/* Pagination */
-.country-pagination {
+.PieChart-container {
   display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.country-pagination li {
-  margin-right: 0.5rem;
-}
-
-.country-pagination button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-.country-pagination button:hover {
-  background-color: #0069d9;
-}
-
-.country-pagination .active button {
-  background-color: #0069d9;
-}
-
-
-**************map**********************
-
-.map-container {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ddd', ' #ddd', ' #ddd;
   height: 100vh;
-  animation: pulse 2s infinite;
+  animation: pulse 2s;
 }
+
+.PieChart-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+ 
+}
+
+canvas {
+  margin-top: 50px; 
+}
+
 
 @keyframes pulse {
   0% {
@@ -236,4 +296,188 @@ input[type="text"] {
   100% {
     transform: scale(1);
   }
+}
+
+/* ***************************Page LoginForm****************** */
+
+
+.login-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  /* background-color: #f8f8f8; */
+  border-radius: 0.5rem;
+ 
+}
+
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  max-width: 350px;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+ 
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.loginInput{
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  /* border: 2px solid #ddd; */
+  border: 2x solid black;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+a {
+  font-size: 0.8rem;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #333;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  
+}
+
+.facebook-button,
+.github-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.Gmail-button {
+  background-color: #db4437;
+  border-radius: 0.5rem;
+}
+
+.facebook-button {
+  background-color: #3b5998;
+  border-radius: 0.5rem;
+}
+
+.github-button {
+  background-color: #e6e9ec;
+  border-radius: 0.5rem;
+}
+
+.Gmail-button:hover,
+.facebook-button:hover,
+.github-button:hover {
+  background-color: rgba(10, 165, 20, 0.452);
+}
+
+.submit-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0077b5;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #005f8b;
+}
+
+
+/* 
+*****************************UserPropfile Form *********************** */
+
+
+/* Center the form */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Style the form fields and labels */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+
+/* Style the submit button */
+form button[type="submit"] {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0069d9;
 }
