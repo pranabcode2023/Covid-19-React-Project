@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import useFetch from '../hooks/useFetch';
 
 
 function About() {
@@ -14,7 +15,7 @@ function About() {
                 location.pathname.includes("Country")
                 ? <Outlet /> :
                 <>
-                    <h1>About Page</h1>
+                    <h1>About</h1>
 
                 </>
             }
