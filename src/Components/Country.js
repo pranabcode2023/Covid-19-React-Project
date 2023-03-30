@@ -255,8 +255,8 @@ const Country = () => {
         // Use userProfile and other data to create a personalized disease profile
         return (
             <div>
-                <h1>Personalized Disease Profile</h1>
-                {/* <h3>{country.country}</h3>
+                {/* <h1>Personalized Disease Profile</h1>
+                <h3>{country.country}</h3>
                  <p>Total Cases: {country.cases}</p>
                 <p>Total Deaths: {country.deaths}</p>
                 <p>Total Recovered: {country.recovered}</p> */}
@@ -312,17 +312,27 @@ const Country = () => {
                     ))}
                 </tbody>
             </table>
-            <nav>
+            <div className="pagination">
                 <ul className="pagination">
-                    {Array.from({ length: totalPages }, (_, index) => (
-                        <li key={index} className={`page-item ${index + 1 === currentPage ? 'active' : ''}`}>
-                            <Button variant="link" onClick={() => handlePageChange(index + 1)}>
-                                {index + 1}
-                            </Button>
+                    <li className="page-item">
+                        <button className="page-link" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+                            Previous
+                        </button>
+                    </li>
+                    {Array.from({ length: totalPages }, (_, i) => (
+                        <li className={`page-item ${i + 1 === currentPage ? 'active' : ''}`} key={i}>
+                            <button className="page-link" onClick={() => handlePageChange(i + 1)}>
+                                {i + 1}
+                            </button>
                         </li>
                     ))}
+                    <li className="page-item">
+                        <button className="page-link" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                            Next
+                        </button>
+                    </li>
                 </ul>
-            </nav>
+            </div>
 
             <Modal show={showModal} onHide={handleCloseModal}>
                 <Modal.Header closeButton>

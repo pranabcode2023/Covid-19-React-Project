@@ -4,14 +4,13 @@
 * {
   box-sizing: border-box;
   text-align: center;
-
   /* color: #ddd; */
 }
 
 /* *********************************  backgroundimage  *************************** */
 
 /* .bg-image-wrapper {
-  background-image: url('./Images/offwhitebackground_img.jpg');
+  background-image: url('./Images/blackbackground_img.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 } */
@@ -60,17 +59,13 @@
   margin-top: 20px;
 }
 
-.search {
-  position: relative;
-  width: 100%;
-}
 
 input[type="text"] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
+  border: 2px solid rgb(222, 76, 76);
+  border-radius: 10px;
   font-size: 16px;
   background-color: #f1f1f1;
 }
@@ -78,11 +73,11 @@ input[type="text"] {
 
 /* +++++++++++++++++++ Hompage   cards  ++++++++++++++++++++++ */
 
- .container {
+.container {
   max-width: auto;
   margin: 0 auto;
-  border: 2px solid rgb(218, 218, 41);
-  overflow:hidden;
+  /* border: 2px solid rgb(227, 4, 4); */
+  overflow: hidden;
 }
 
 .cardsContainer {
@@ -93,26 +88,15 @@ input[type="text"] {
   align-items: center;
   /* center the cards vertically */
   margin-top: 20px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
-
-
-/* .cardsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-  border: 2px solid red;
-}  */
 
 .flip-card {
   background-color: transparent;
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  margin: 20px;
-  margin-left: 15%;
-  /* margin-right: 10%; */
+  margin: 20px auto;
   box-shadow: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   cursor: pointer;
@@ -138,7 +122,8 @@ input[type="text"] {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
+  border: 5px solid rgb(222, 76, 76);
 }
 
 .flip-card-front {
@@ -163,7 +148,7 @@ input[type="text"] {
 }
 
 .fs-4 {
-  font-size: 1.5rem ;
+  font-size: 1.5rem;
 }
 
 /* ******modal******** */
@@ -187,7 +172,7 @@ input[type="text"] {
 
 /* Modal content */
 .modal-content {
-  background-color: #dbdde4;
+  background-color: #9ba2bd;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -247,12 +232,33 @@ input[type="text"] {
     width: 100%;
     max-width: 200px;
     height: 300px;
-    margin: 20px auto;
+    margin: 10px auto;
   }
-}
- */
+} */
+
 
 /* **********************************Country page ********************************* */
+
+/* Center the page content */
+
+/* Style the table */
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #cd0606;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
 
 
 /* **************map********************** */
@@ -276,11 +282,11 @@ input[type="text"] {
 .PieChart-title {
   font-size: 32px;
   margin-bottom: 20px;
- 
+
 }
 
 canvas {
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
 
@@ -306,7 +312,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 
@@ -319,7 +325,7 @@ label {
 input[type="number"],
 select,
 textarea {
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 4px;
   padding: 8px;
   font-size: 16px;
@@ -327,8 +333,8 @@ textarea {
   align-items: center;
 }
 
-button[type="submit"]{
-  background-color: #4CAF50;
+button[type="submit"] {
+  background-color: #264ea0;
   color: white;
   padding: 10px 20px;
   border: none;
