@@ -23,22 +23,22 @@ function App() {
 
       <div className="App">
         <div className="bg-image-wrapper">
+
           <AuthContextProvider>
             <Navbar demoUser={demoUser} setDemoUser={setDemoUser} />
             <Routes>
               <Route path='/' element={<Homepage />} />
               <Route path='*' element={<Error404 />} />
-              {/* <Route path='/about' element={<About />} /> */}
+
               <Route path='/About' element={<ProtectedRoute><About /></ProtectedRoute>} >
-                {/* <Route path='LoginForm' element={< LoginForm />} /> */}
+
                 <Route path='PieChart' element={< PieChart />} />
                 <Route path='Map' element={< Map />} />
                 <Route path='Country' element={<Country />} />
-                {/* <Route path='UserProfileForm' element={<UserProfileForm />} /> */}
-                {/* </Route> */}
+
               </Route>
               <Route path='/countries' element={<Countries />} />
-              {/* <Route path='details/:id/:name' element={<ProtectedRoute><CharDetails /></ProtectedRoute>} /> */}
+
 
               <Route path='login' element={<Login />} />
 

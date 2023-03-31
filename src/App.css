@@ -3,8 +3,13 @@
 
 * {
   box-sizing: border-box;
-  text-align: center;
-  /* color: #ddd; */
+    text-align: center;
+    /* color: #ddd; */
+}
+
+body {
+   font-family: "Sofia", sans-serif;
+    font-size: 20px;
 }
 
 /* *********************************  backgroundimage  *************************** */
@@ -18,37 +23,8 @@
 
 /* *********************navbar********************* */
 
-/* Style for active link */
-.nav-link.active {
-  color: red;
-}
 
-/* Style for Offcanvas Navbar */
-.navbar {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
-}
 
-.nav-link {
-  color: #343a40;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-.offcanvas-header {
-  border-bottom: 1px solid #dee2e6;
-}
-
-.offcanvas-title {
-  color: #343a40;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.offcanvas-body {
-  padding: 20px;
-}
 
 
 /* ************************ searchbar***************************** */
@@ -239,9 +215,6 @@ input[type="text"] {
 
 /* **********************************Country page ********************************* */
 
-/* Center the page content */
-
-/* Style the table */
 .table {
   border-collapse: collapse;
   width: 100%;
@@ -306,14 +279,24 @@ canvas {
 
 /* ***************************Page LoginForm/ userprofileform****************** */
 
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forms-container {
+  display: flex;
+}
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  /* border: 2px solid red; */
 }
+
+
 
 
 label {
@@ -348,18 +331,14 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid red;
-}
 
 .login-form form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  border: 2px solid red;
+  justify-content: center;
 }
 
 .login-form label {

@@ -5,10 +5,10 @@ function Login() {
 
     return (
         <div>
-            <h1>Register new user</h1>
+            <h1>Register</h1>
             <LoginForm functionType={"register"} />
 
-            <h1>Login existing user</h1>
+            <h1>Login</h1>
             <LoginForm functionType={"login"} />
         </div>
     )

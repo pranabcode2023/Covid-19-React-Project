@@ -284,7 +284,7 @@ const Country = () => {
                 <PersonalizedProfile country={selectedCountry} userProfile={userProfile} />
             )}
 
-            <table className="table">
+            <table className="table" >
                 <thead>
                     <tr>
                         <th>Country</th>
@@ -304,7 +304,7 @@ const Country = () => {
                             <td>{country.recovered}</td>
                             <td>{country.active}</td>
                             <td>
-                                <Button variant="primary" onClick={() => handleShowModal(country)}>
+                                <Button variant="secondary" onClick={() => handleShowModal(country)}>
                                     Add
                                 </Button>
                             </td>
