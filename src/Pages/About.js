@@ -22,6 +22,7 @@ function About() {
                 ? <Outlet /> :
                 <>
                     <h1>About</h1>
+                    <hr />
 
                     {location.pathname.includes("about") ?
                         <>

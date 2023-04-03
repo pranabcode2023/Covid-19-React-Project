@@ -2,10 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Doughnut } from 'react-chartjs-2';
 import 'chart.js/auto';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 
 const PieChart = () => {
   const [data, setData] = useState(null);
+  const navigate = useNavigate();
+  const goBack = () =>
+    navigate(-1);
 
   useEffect(() => {
     axios.get('https://disease.sh/v3/covid-19/all')
@@ -38,9 +43,17 @@ const PieChart = () => {
 
   return (
     <div className="PieChart-container"> {/* add a class name to the container div */}
-      <h1 className="PieChart-title">Covid-19 Worldwide Pie Chart </h1> {/* add a class name to the title */}
+      <h1 className="PieChart-title">Covid-19 Worldwide Pie Chart </h1>{/* add a class name to the title */}
+      <>
+        <Button variant="secondary"
+          style={{
+            color: 'darkblue',
+          }}
+          onClick={goBack} >Back to About</Button>
+      </>
+
       <Doughnut data={chartData} />
-    </div>
+    </div >
   );
 };
 

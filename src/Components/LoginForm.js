@@ -39,11 +39,18 @@
 
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm({ functionType }) { // using destructuring to extract functionType from props
     const { user, logOut, createNewUser, logIn } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    const navigateToAbout = () => {
+        // 👇️ navigate to /About
+        navigate('/About');
+    };
+
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value)
@@ -89,7 +96,7 @@ function LoginForm({ functionType }) { // using destructuring to extract functio
                         Password:
                         <input className='loginInput' type='password' placeholder='password' value={password} onChange={(event) => setPassword(event.target.value)} />
                     </label>
-                    <button className="login-button" type="submit">Log in</button>
+                    <button className="login-button" type="submit" >Log in</button>
                     <div className="forgot-password">
                         <a href="#">Forgot password?</a>
                     </div>

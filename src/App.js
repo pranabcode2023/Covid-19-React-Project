@@ -28,21 +28,19 @@ function App() {
             <Navbar demoUser={demoUser} setDemoUser={setDemoUser} />
             <Routes>
               <Route path='/' element={<Homepage />} />
-              <Route path='*' element={<Error404 />} />
-
-              <Route path='/About' element={<ProtectedRoute><About /></ProtectedRoute>} >
-
-                <Route path='PieChart' element={< PieChart />} />
-                <Route path='Map' element={< Map />} />
-                <Route path='Country' element={<Country />} />
-
-              </Route>
               <Route path='/countries' element={<Countries />} />
 
+              <Route path='*' element={<Error404 />} />
 
               <Route path='login' element={<Login />} />
 
+              <Route path='/About' element={<ProtectedRoute><About /></ProtectedRoute>} >
+                <Route path='Country' element={<Country />} />
+                <Route path='PieChart' element={< PieChart />} />
+                <Route path='Map' element={< Map />} />
 
+
+              </Route>
             </Routes>
           </AuthContextProvider>
 

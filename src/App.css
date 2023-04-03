@@ -40,7 +40,7 @@ input[type="text"] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid rgb(222, 76, 76);
+  border: 2px solid #394867;
   border-radius: 10px;
   font-size: 16px;
   background-color: #f1f1f1;
@@ -99,7 +99,8 @@ input[type="text"] {
   height: 100%;
   backface-visibility: hidden;
   border-radius: 20px;
-  border: 5px solid rgb(222, 76, 76);
+  border: 3px solid #394867;
+
 }
 
 .flip-card-front {
@@ -148,12 +149,13 @@ input[type="text"] {
 
 /* Modal content */
 .modal-content {
-  background-color: #9ba2bd;
+  background-color: #888;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 2px solid #394867;
   width: 80%;
   max-width: 600px;
+  color: black;
 }
 
 /* Close button */
@@ -189,7 +191,7 @@ input[type="text"] {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: #007bff;
+  color: #394867;
 }
 
 .pagination li button:focus,
@@ -198,7 +200,7 @@ input[type="text"] {
 }
 
 .pagination li.active button {
-  background-color: #007bff;
+  background-color: #394867;
   color: #fff;
   cursor: default;
 }
@@ -225,7 +227,7 @@ input[type="text"] {
 .table td {
   padding: 10px;
   text-align: center;
-  border: 1px solid #cd0606;
+  border: 1px solid #394867;
 }
 
 .table th {
@@ -243,8 +245,8 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  width: 800px;
+  margin-top: 10px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
   background-color: #ddd', ' #ddd', ' #ddd;
@@ -283,6 +285,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .forms-container {
@@ -294,6 +297,8 @@ form {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  background-color: #888;
+
 }
 
 
@@ -336,8 +341,8 @@ button[type="submit"]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  border: 2px solid red;
+  margin-top: 0px;
+  border: 3px solid #394867;
   justify-content: center;
 }
 
@@ -345,7 +350,7 @@ button[type="submit"]:hover {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .loginInput {
@@ -355,7 +360,7 @@ button[type="submit"]:hover {
   border: 1px solid #ccc;
   font-size: 16px;
   width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   align-items: center;
 }
 

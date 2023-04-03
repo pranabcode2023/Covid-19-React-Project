@@ -162,6 +162,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import UserProfileForm from './UserProfileForm';
+import { useNavigate } from 'react-router-dom';
 
 const Country = () => {
     const [countries, setCountries] = useState([]);
@@ -172,6 +173,9 @@ const Country = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const resultsPerPage = 20;
     const [userProfile, setUserProfile] = useState(null);
+    const navigate = useNavigate();
+    const goBack = () =>
+        navigate(-1);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -253,6 +257,10 @@ const Country = () => {
         }
 
         // Use userProfile and other data to create a personalized disease profile
+
+
+
+
         return (
             <div>
                 {/* <h1>Personalized Disease Profile</h1>
@@ -275,9 +283,21 @@ const Country = () => {
     };
 
     return (
-        <div>
 
+        <div>
             <h1>COVID-19 Statistics by Country</h1>
+
+            <>
+                <Button variant="secondary"
+                    style={{
+                        color: 'darkblue',
+                        display: "flex"
+                    }} onClick={goBack} >Back to About</Button>
+            </>
+
+
+
+
             <input type="text" placeholder="Search by country name" onChange={handleSearch} />
             {error && <p>{error}</p>}
             {userProfile && selectedCountry && (
