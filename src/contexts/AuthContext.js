@@ -17,7 +17,7 @@ export const AuthContextProvider = (props) => {
                 alert("Sign up successful - now please log in")
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorMessage)
             });

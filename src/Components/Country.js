@@ -295,9 +295,6 @@ const Country = () => {
                     }} onClick={goBack} >Back to About</Button>
             </>
 
-
-
-
             <input type="text" placeholder="Search by country name" onChange={handleSearch} />
             {error && <p>{error}</p>}
             {userProfile && selectedCountry && (
