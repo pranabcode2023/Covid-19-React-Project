@@ -89,51 +89,77 @@
 
 // ********************html Form***************************
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
+import { addDoc, collection } from "firebase/firestore";
+import { db } from '../fbConfig';
+
+
+
 
 const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
+    const { user } = useContext(AuthContext)
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');
     const [conditions, setConditions] = useState('');
     const [medications, setMedications] = useState('');
     const [vaccinated, setVaccinated] = useState('');
     const [travel, setTravel] = useState('');
+    const [name, setName] = useState('');
 
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onSubmit({
+        const patientInfo = {
             age,
             gender,
             conditions,
             medications,
             vaccinated,
             travel,
-        });
+            nationality: country.country,
+            name,
+            doctor: user.email
+        }
+        onSubmit(patientInfo);
+        try {
+            const docRef = await addDoc(collection(db, "cases"), patientInfo);
+
+            console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+
+
     };
 
-    const handleRefresh = () => {
+    const handleRefresh = (e) => {
+        e.preventDefault()
         setAge('');
         setGender('');
         setConditions('');
         setMedications('');
         setVaccinated('');
         setTravel('');
-        if (typeof onRefresh === 'function') {
-            onRefresh();
-        }
+        setName('');
+        // if (typeof onRefresh === 'function') {
+        //     onRefresh();
+        // }
     };
 
-    const handleDelete = () => {
+    const handleDelete = (e) => {
+        e.preventDefault()
         setAge('');
         setGender('');
         setConditions('');
         setMedications('');
         setVaccinated('');
         setTravel('');
-        if (typeof onDelete === 'function') {
-            onDelete();
-        }
+        setName('');
+        // if (typeof onDelete === 'function') {
+        //     onDelete();
+        // }
     };
 
     return (
@@ -141,6 +167,11 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
             <h3>{country.country} :
                 <hr />
                 Add Covid-19 Case</h3>
+            <div>
+                <label>Name:</label>
+                <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+
             <div>
                 <label>Age:</label>
                 <input type="number" id="age" value={age} onChange={(e) => setAge(e.target.value)} />
@@ -176,8 +207,8 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
                 <textarea id="travel" value={travel} onChange={(e) => setTravel(e.target.value)} />
             </div>
             <button type="submit">Submit</button>
-            <button type="submit" onClick={handleRefresh}>Refresh</button>
-            <button type="submit" onClick={handleDelete}>Delete Profile</button>
+            <button onClick={handleRefresh}>Refresh</button>
+            <button onClick={handleDelete}>Delete Profile</button>
         </form>
     );
 };

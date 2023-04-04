@@ -159,10 +159,18 @@
 // export default Country;
 
 
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import UserProfileForm from './UserProfileForm';
 import { useNavigate } from 'react-router-dom';
+import PersonalizedProfile from './PersonalizedProfile';
+// import { collection, addDoc } from "firebase/firestore";
+// import { db } from '../fbConfig';
 
 const Country = () => {
     const [countries, setCountries] = useState([]);
@@ -174,10 +182,12 @@ const Country = () => {
     const resultsPerPage = 20;
     const [userProfile, setUserProfile] = useState(null);
     const navigate = useNavigate();
+
     const goBack = () =>
         navigate(-1);
 
     useEffect(() => {
+        console.log("%cuseEffect run in Coutnry", "color:red")
         const fetchData = async () => {
             try {
                 const response = await fetch('https://disease.sh/v3/covid-19/countries');
@@ -194,6 +204,7 @@ const Country = () => {
         };
         fetchData();
     }, []);
+
 
     // const handleShowModal = (country) => {
     //     setSelectedCountry(country);
@@ -218,6 +229,7 @@ const Country = () => {
         const filtered = countries.filter((country) => {
             return country.country && country.country.toLowerCase().includes(searchQuery);
         });
+
         setFilteredCountries(filtered);
         setCurrentPage(1); // Reset the current page to the first page when searching
     };
@@ -227,11 +239,17 @@ const Country = () => {
     const indexOfLastResult = currentPage * resultsPerPage;
     const indexOfFirstResult = indexOfLastResult - resultsPerPage;
 
+
+
     // Extract the results for the current page
     const currentResults = filteredCountries.slice(indexOfFirstResult, indexOfLastResult);
 
+
     // Calculate the total number of pages
     const totalPages = Math.ceil(filteredCountries.length / resultsPerPage);
+
+
+
 
     // Handle page change
     const handlePageChange = (pageNumber) => {
@@ -245,42 +263,12 @@ const Country = () => {
     // };
 
     const handleUserProfileSubmit = (profile) => {
-        <UserProfileForm country={selectedCountry} onSubmit={handleUserProfileSubmit} />
+        // <UserProfileForm country={selectedCountry} onSubmit={handleUserProfileSubmit} />
 
         setUserProfile(profile);
+        // console.log(profile)
     };
 
-
-    const PersonalizedProfile = ({ country, userProfile }) => {
-        if (!selectedCountry) {
-            return null;
-        }
-
-        // Use userProfile and other data to create a personalized disease profile
-
-
-
-
-        return (
-            <div>
-                {/* <h1>Personalized Disease Profile</h1>
-                <h3>{country.country}</h3>
-                 <p>Total Cases: {country.cases}</p>
-                <p>Total Deaths: {country.deaths}</p>
-                <p>Total Recovered: {country.recovered}</p> */}
-                {userProfile && (
-                    <>
-                        <p>Age: {userProfile.age}</p>
-                        <p>Gender: {userProfile.gender}</p>
-                        <p>Existing Health Conditions: {userProfile.conditions}</p>
-                        <p>Medications: {userProfile.medications}</p>
-                        <p>Vaccination Status: {userProfile.vaccinated}</p>
-                        <p>Recent Travel: {userProfile.travel}</p>
-                    </>
-                )}
-            </div>
-        );
-    };
 
     return (
 

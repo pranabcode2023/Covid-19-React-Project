@@ -7,6 +7,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = (props) => {
 
     const [user, setUser] = useState(null);
+    console.log("current user:", user)
 
     const createNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)

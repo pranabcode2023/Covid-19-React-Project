@@ -14,7 +14,7 @@ const Countries = () => {
     const [error, setError] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const resultsPerPage = 20;
-    const [comments, setComments] = useState({});
+   
 
     useEffect(() => {
         const fetchData = async () => {
@@ -69,31 +69,8 @@ const Countries = () => {
         setCurrentPage(pageNumber);
     };
 
-    const handleCommentChange = (country, e) => {
-        setComments({
-            ...comments,      // ***************** spreadoperator *******************
-            [country.country]: e.target.value
-        });
-    };
-
-
-    const handleAddComment = (country) => {
-        const newComments = {
-            ...comments,
-            [country.country]: ''
-        };
-        setComments(newComments);
-    };
-
-    const handleDeleteComment = (country) => {
-        const newComments = {
-            ...comments
-        };
-        delete newComments[country.country];
-        setComments(newComments);
-    };
-
-    return (
+ 
+return (
         <div className="container">
             <div className="Search">
                 <div className="col-md-12">
@@ -165,14 +142,8 @@ const Countries = () => {
                             <p>Today's Deaths: {selectedCountry.todayDeaths}</p>
                             <p>Active Cases: {selectedCountry.active}</p>
                             <p>Critical Cases: {selectedCountry.critical}</p>
-                            <p>Comments: {comments[selectedCountry.country]}</p>
-                            <hr />
-                            <h5>Comments</h5>
-                            <div className="comments">
-                                <textarea value={comments[selectedCountry.country] || ''} onChange={(e) => handleCommentChange(selectedCountry, e)} />
-                                <Button variant="primary" onClick={() => handleAddComment(selectedCountry)}>Add Comment</Button>
-                                {comments[selectedCountry.country] && <Button variant="danger" onClick={() => handleDeleteComment(selectedCountry)}>Delete Comment</Button>}
-                            </div>
+                       
+                            
                         </>
                     )}
                 </Modal.Body>
