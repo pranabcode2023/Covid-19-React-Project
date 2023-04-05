@@ -93,9 +93,7 @@ import { useContext, useState, } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { collection, addDoc, } from "firebase/firestore";
 import { db } from '../fbConfig';
-
-
-
+import { useNavigate } from 'react-router-dom';
 
 const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
     const { user } = useContext(AuthContext)
@@ -106,9 +104,7 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
     const [vaccinated, setVaccinated] = useState('');
     const [travel, setTravel] = useState('');
     const [name, setName] = useState('');
-
-
-
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -121,18 +117,16 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
             travel,
             nationality: country.country,
             name,
-            doctor: user.email
-        }
+            doctor: user.email,
+        };
         onSubmit(patientInfo);
         try {
             const docRef = await addDoc(collection(db, "cases"), patientInfo);
-
             console.log("Document written with ID: ", docRef.id);
+            navigate("/About/Covid19Cases"); // Redirect to the covid19Cases page
         } catch (e) {
             console.error("Error adding document: ", e);
         }
-
-
     };
 
 

@@ -35,10 +35,10 @@ function App() {
 
               <Route path='login' element={<Login />} />
 
-              <Route path='/About' element={<ProtectedRoute><About /></ProtectedRoute>} >
-                <Route path='Country' element={<Country />} />
-                <Route path='Covid19Cases' element={<Covid19Cases />} />
-                <Route path='PieChart' element={< PieChart />} />
+              <Route path='/About' element={<About />} >
+                <Route path='Country' element={<ProtectedRoute><Country /></ProtectedRoute>} />
+                <Route path='Covid19Cases' element={<ProtectedRoute><Covid19Cases /></ProtectedRoute>} />
+                <Route path='PieChart' element={<ProtectedRoute >< PieChart /></ProtectedRoute>} />
                 <Route path='Map' element={< Map />} />
 
 

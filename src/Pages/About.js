@@ -1,10 +1,6 @@
 import React from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
-
-
-
-
 function About() {
     const location = useLocation();
     // console.log("location: ", location);

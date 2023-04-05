@@ -42,8 +42,8 @@ const PieChart = () => {
   };
 
   return (
-    <div className="PieChart-container"> {/* add a class name to the container div */}
-      <h1 className="PieChart-title">Covid-19 Worldwide Pie Chart </h1>{/* add a class name to the title */}
+    <div className="PieChart-container">        {/* add a class name to the container div */}
+      <h1 className="PieChart-title">Covid-19 Worldwide Pie Chart </h1>    {/* add a class name to the title */}
       <>
         <Button variant="secondary"
           style={{

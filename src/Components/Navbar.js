@@ -25,7 +25,8 @@ function OffcanvasNavbar() {
                 <Navbar key={expand} bg="secondary" expand={expand} >
                     <Container fluid>
                         <NavLink to='/' style={linkStyle}>Home page</NavLink>
-                        <NavLink to='/RedAlert' style={linkStyle}>Crisis_Countries</NavLink>
+                        {!user ? <NavLink to='/login' style={linkStyle}>Log in</NavLink> :
+                            <p style={{ cursor: "pointer" }} onClick={logOut}>Logout</p>}
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -40,11 +41,11 @@ function OffcanvasNavbar() {
                             <Offcanvas.Body>
                                 <Nav >
                                     <hr />
-                                    {!user ? <NavLink to='/login' style={({ isActive }) => isActive ? linkStyle : null}>Log in</NavLink> :
-                                        <p style={{ cursor: "pointer" }} onClick={logOut}>Logout</p>}
-                                    <hr />
+                                    <NavLink to='/RedAlert' style={({ isActive }) => isActive ? linkStyle : null}>Update</NavLink>
+
+                                    {/* <hr />
                                     <NavLink to='/' style={({ isActive }) => isActive ? linkStyle : null}>HomePage</NavLink>
-                                    <hr />
+                                    <hr /> */}
                                     <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>About</NavLink>
 
                                     <hr />
