@@ -378,6 +378,11 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import RedAlert from './RedAlert';
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from '../fbConfig';
+
+
+
 
 
 const Countries = () => {
@@ -388,13 +393,27 @@ const Countries = () => {
     const [error, setError] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const resultsPerPage = 20;
-    const [alert, setAlert] = useState([]);
+    // const [alert, setAlert] = useState([]);
 
-    const handleAddToAlert = (country) => {
-        if (!alert.includes(country)) {
-            setAlert([...alert, country]);
+    // const handleAddToAlert = (country) => {
+    //     if (!alert.includes(country)) {
+    //         setAlert([...alert, country]);
+    //     }
+    // };
+
+    const handleAddToAlert = async (country) => {
+        try {
+            const alertData = {
+                country: country.country,
+                timestamp: Timestamp.now(),
+            };
+            const docRef = await addDoc(collection(db, "crisis_countries"), alertData);
+            console.log("Alert document written with ID: ", docRef.id);
+        } catch (e) {
+            console.error("Error adding alert document: ", e);
         }
     };
+
 
 
 
@@ -525,15 +544,16 @@ const Countries = () => {
                             <p>Active Cases: {selectedCountry.active}</p>
                             <p>Critical Cases: {selectedCountry.critical}</p>
                             <div className="alert">
-                                <h3>Covid_19 Crisis</h3>
+                                {/* <h3>Covid_19 Crisis</h3>
                                 <ul>
                                     {alert.map((country) => (
                                         <li key={country.country}>{country.country}</li>
 
                                     ))}
-                                </ul>
+                                </ul> */}
                             </div>
-                            <Button variant="danger" onClick={() => handleAddToAlert(selectedCountry)}>Add to in Alert</Button>
+                            {/* <Button variant="danger" onClick={() => handleAddToAlert(selectedCountry)}>Add to in Alert</Button> */}
+                            <Button variant="primary" onClick={() => handleAddToAlert(selectedCountry)}>Add Alert </Button>
 
                         </>
                     )}
