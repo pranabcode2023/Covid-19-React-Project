@@ -170,7 +170,7 @@ import UserProfileForm from './UserProfileForm';
 import { useNavigate } from 'react-router-dom';
 import PersonalizedProfile from './PersonalizedProfile';
 // import { collection, addDoc } from "firebase/firestore";
-// import { db } from '../fbConfig';
+import { db } from '../fbConfig';
 
 const Country = () => {
     const [countries, setCountries] = useState([]);
@@ -183,8 +183,10 @@ const Country = () => {
     const [userProfile, setUserProfile] = useState(null);
     const navigate = useNavigate();
 
+
     const goBack = () =>
         navigate(-1);
+
 
     useEffect(() => {
         console.log("%cuseEffect run in Coutnry", "color:red")
@@ -268,6 +270,8 @@ const Country = () => {
         setUserProfile(profile);
         // console.log(profile)
     };
+
+
 
 
     return (

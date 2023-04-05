@@ -89,9 +89,9 @@
 
 // ********************html Form***************************
 
-import { useContext, useState } from 'react';
+import { useContext, useState, } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
-import { addDoc, collection } from "firebase/firestore";
+import { collection, addDoc, } from "firebase/firestore";
 import { db } from '../fbConfig';
 
 
@@ -106,6 +106,7 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
     const [vaccinated, setVaccinated] = useState('');
     const [travel, setTravel] = useState('');
     const [name, setName] = useState('');
+
 
 
 
@@ -133,6 +134,7 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
 
 
     };
+
 
     const handleRefresh = (e) => {
         e.preventDefault()
@@ -210,7 +212,12 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
             <button onClick={handleRefresh}>Refresh</button>
             <button onClick={handleDelete}>Delete Profile</button>
         </form>
+
+
+
     );
 };
 
 export default UserProfileForm;
+
+

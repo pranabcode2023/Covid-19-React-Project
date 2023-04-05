@@ -136,7 +136,7 @@ function LoginForm({ functionType }) {
                         Password:
                         <input className='loginInput' type='password' placeholder='password' value={password} onChange={(event) => setPassword(event.target.value)} />
                     </label>
-                    <Button className="login-button" type="submit"  >Log in</Button>
+                    <Button className="login-button" type="submit" >Log in</Button>
                     <div className="forgot-password">
                         <a href="#">Forgot password?</a>
                     </div>

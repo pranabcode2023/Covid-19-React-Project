@@ -25,6 +25,7 @@ function OffcanvasNavbar() {
                 <Navbar key={expand} bg="secondary" expand={expand} >
                     <Container fluid>
                         <NavLink to='/' style={linkStyle}>Home page</NavLink>
+                        <NavLink to='/RedAlert' style={linkStyle}>Crisis_Countries</NavLink>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -50,9 +51,10 @@ function OffcanvasNavbar() {
                                     {location.pathname.includes("about") ?
                                         <>
                                             {/* <NavLink to='/About/LoginForm' style={({ isActive }) => isActive ? linkStyle : null}>LoginForm</NavLink> */}
-                                            <NavLink to='/About/Country' style={({ isActive }) => isActive ? linkStyle : null}>Covid-19 Data</NavLink>
-                                            <NavLink to='/About/PieChart' style={({ isActive }) => isActive ? linkStyle : null}>Covid-19 PieChart</NavLink>
-                                            <NavLink to='/About/Map' style={({ isActive }) => isActive ? linkStyle : null}>Covid-19 Vaccine Map</NavLink>
+                                            <NavLink to='/About/Country' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 Data</NavLink>
+                                            <NavLink to='/About/Covid19Cases' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 Cases</NavLink>
+                                            <NavLink to='/About/PieChart' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 PieChart</NavLink>
+                                            <NavLink to='/About/Map' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 Vaccine Map</NavLink>
                                         </>
                                         : null}
 

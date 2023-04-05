@@ -9,11 +9,11 @@ import Country from './Components/Country'
 import PieChart from './Components/PieChart'
 import Map from './Components/Map'
 import './App.css';
-import LoginForm from './Components/LoginForm'
-import UserProfileForm from './Components/UserProfileForm'
 import { AuthContextProvider } from './contexts/AuthContext'
 import ProtectedRoute from './Components/ProtectedRoute'
 import Login from './Pages/Login'
+import Covid19Cases from './Components/Covid19Cases'
+import RedAlert from './Components/RedAlert'
 
 
 function App() {
@@ -28,7 +28,8 @@ function App() {
             <Navbar demoUser={demoUser} setDemoUser={setDemoUser} />
             <Routes>
               <Route path='/' element={<Homepage />} />
-              <Route path='/countries' element={<Countries />} />
+              <Route path='/Countries' element={<Countries />} />
+              <Route path='/RedAlert' element={<RedAlert />} />
 
               <Route path='*' element={<Error404 />} />
 
@@ -36,6 +37,7 @@ function App() {
 
               <Route path='/About' element={<ProtectedRoute><About /></ProtectedRoute>} >
                 <Route path='Country' element={<Country />} />
+                <Route path='Covid19Cases' element={<Covid19Cases />} />
                 <Route path='PieChart' element={< PieChart />} />
                 <Route path='Map' element={< Map />} />
 
