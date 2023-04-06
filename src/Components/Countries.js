@@ -4,7 +4,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import RedAlert from './RedAlert';
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { db } from '../fbConfig';
 import { useNavigate } from 'react-router-dom';
@@ -20,6 +19,9 @@ const Countries = () => {
     const resultsPerPage = 20;
     // const [alert, setAlert] = useState([]);
     const navigate = useNavigate();
+    const numberFormat = new Intl.NumberFormat("en-US");
+    // const bigNum = 1000000000000000110000n;
+    // console.log(numberFormat.format(bigNum));
 
 
     const handleAddToAlert = async (country) => {
@@ -114,9 +116,10 @@ const Countries = () => {
                                 </div>
                                 <div className="flip-card-back">
                                     <h4>{country.country}</h4>
-                                    <p>Cases: {country.cases}</p>
-                                    <p>Deaths: {country.deaths}</p>
-                                    <p>Recovered: {country.recovered}</p>
+                                    <hr />
+                                    <p>Cases: {numberFormat.format(country.cases)}</p>
+                                    <p>Deaths: {numberFormat.format(country.deaths)}</p>
+                                    <p>Recovered: {numberFormat.format(country.recovered)}</p>
 
                                     <Button variant="primary" onClick={() => handleShowModal(country)}>View Details</Button>
 
@@ -159,13 +162,13 @@ const Countries = () => {
                 <Modal.Body>
                     {selectedCountry && (
                         <>
-                            <p>Cases: {selectedCountry.cases}</p>
-                            <p>Deaths: {selectedCountry.deaths}</p>
-                            <p>Recovered: {selectedCountry.recovered}</p>
-                            <p>Today's Cases: {selectedCountry.todayCases}</p>
-                            <p>Today's Deaths: {selectedCountry.todayDeaths}</p>
-                            <p>Active Cases: {selectedCountry.active}</p>
-                            <p>Critical Cases: {selectedCountry.critical}</p>
+                            <p>Cases: {numberFormat.format(selectedCountry.cases)}</p>
+                            <p>Deaths: {numberFormat.format(selectedCountry.deaths)}</p>
+                            <p>Recovered: {numberFormat.format(selectedCountry.recovered)}</p>
+                            <p>Today's Cases: {numberFormat.format(selectedCountry.todayCases)}</p>
+                            <p>Today's Deaths: {numberFormat.format(selectedCountry.todayDeaths)}</p>
+                            <p>Active Cases: {numberFormat.format(selectedCountry.active)}</p>
+                            <p>Critical Cases: {numberFormat.format(selectedCountry.critical)}</p>
                             <div className="alert">
                                 {/* <h3>Covid_19 Crisis</h3>
                                 <ul>

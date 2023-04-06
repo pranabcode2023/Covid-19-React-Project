@@ -1,67 +1,86 @@
-// import React from 'react';
-
-// const RedAlert = () => {
-//     return (
-//         <div className="card">
-//             <img src="https://via.placeholder.com/150" alt="placeholder" />
-//             <div className="card-body">
-//                 <h5 className="card-title">Card Title</h5>
-//                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                 <a href="http://localhost:3000/" className="btn btn-primary">HomePage</a>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default RedAlert;
-
-// import React from 'react'
-
-// const RedAlert = () => {
-//     return (
-//         <div>
-
-//         </div>
-//     )
-// }
-
-// export default RedAlert
-
 import { useState, useEffect } from 'react';
-import { collection, getDocs, } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, doc, query, where } from 'firebase/firestore';
 import { db } from '../fbConfig';
-
-
+import { Button } from 'react-bootstrap';
 
 const RedAlert = () => {
     const [crisisCountries, setCrisisCountries] = useState([]);
+    const [timePeriod, setTimePeriod] = useState('all');
+    const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
+
+    // ***********************Time Period****************************
     useEffect(() => {
         const fetchCrisisCountries = async () => {
-            const querySnapshot = await getDocs(collection(db, 'crisis_countries'));
+            let q;
+            if (timePeriod === 'all') {
+                q = query(collection(db, 'crisis_countries'));
+            } else {
+                const cutoffTimestamp = Date.now() - (timePeriod * 24 * 60 * 60 * 1000);
+                q = query(collection(db, 'crisis_countries'), where('timestamp', '>=', cutoffTimestamp));
+            }
+            const querySnapshot = await getDocs(q);
 
-            const data = querySnapshot.docs.map((doc) => doc.data());
+            const data = querySnapshot.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id,
+            }));
             setCrisisCountries(data);
         };
         fetchCrisisCountries();
+    }, [timePeriod]);
+
+    //    ******************CurrentDatetime *****************
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentDateTime(new Date());
+        }, 1000);
+        return () => clearInterval(interval);
     }, []);
 
 
+    const handleDelete = async (id) => {
+        console.log("Deleting country with ID:", id);
+        try {
+            await deleteDoc(doc(db, 'crisis_countries', id));
+            setCrisisCountries(prevState => prevState.filter(country => country.id !== id));
+            console.log("Country with ID", id, "deleted successfully.");
+        } catch (error) {
+            console.log("Error deleting country:", error);
+        }
+    };
 
+
+    const handleTimePeriodChange = (event) => {
+        setTimePeriod(event.target.value);
+    };
 
     return (
-        <div className="cardsContainer">
+        <div>
+            <div>
+                <h3>Show countries</h3>
+                <p>Current date and time: {currentDateTime.toLocaleString()}</p>
+                <hr />
+                <select id="time-period-select" value={timePeriod} onChange={handleTimePeriodChange}>
+                    <option value="all">All</option>
+                    <option value="today">Today</option>
+                    <option value="7">7 days</option>
+                    <option value="14">14 days</option>
+                    <option value="30">30 days</option>
+                </select>
 
-            {crisisCountries.map((country, index) => (
-                <div className="card" key={index}>
-                    <h3>COVID-19 Emergency in:</h3>
-                    <h3>{country.country}</h3>
-
-                </div>
-            ))}
+            </div>
+            <div className="cardsContainer">
+                {crisisCountries.map((country, index) => (
+                    <div className="card" key={index}>
+                        <h3>COVID-19 Emergency in:</h3>
+                        <h3>{country.country}</h3>
+                        <Button onClick={() => handleDelete(country.id)}>Delete</Button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
-
 
 export default RedAlert;

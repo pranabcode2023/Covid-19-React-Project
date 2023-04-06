@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../fbConfig';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Covid19Cases = () => {
     const [cases, setCases] = useState([]);
     const currentDate = new Date().toLocaleDateString();
+    const navigate = useNavigate();
+
+
+
+    const goBack = () =>
+        navigate(-1);
 
     useEffect(() => {
         const fetchCases = async () => {
@@ -20,6 +28,14 @@ const Covid19Cases = () => {
 
         <div className="container">
             <h1>Covid_19Cases</h1>
+            <>
+                <Button variant="secondary"
+                    style={{
+                        color: 'darkblue',
+                        display: "flex"
+                    }} onClick={goBack} >Back to About</Button>
+            </>
+
             {cases.map((patient, index) => (
                 <div key={index} className="card">
                     <div className="card-body">

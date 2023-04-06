@@ -170,7 +170,7 @@ import UserProfileForm from './UserProfileForm';
 import { useNavigate } from 'react-router-dom';
 import PersonalizedProfile from './PersonalizedProfile';
 // import { collection, addDoc } from "firebase/firestore";
-import { db } from '../fbConfig';
+// import { db } from '../fbConfig';
 
 const Country = () => {
     const [countries, setCountries] = useState([]);
@@ -182,6 +182,9 @@ const Country = () => {
     const resultsPerPage = 20;
     const [userProfile, setUserProfile] = useState(null);
     const navigate = useNavigate();
+    const numberFormat = new Intl.NumberFormat("en-US");
+    // const bigNum = 1000000000000000110000n;
+    // console.log(numberFormat.format(bigNum));
 
 
     const goBack = () =>
@@ -276,7 +279,7 @@ const Country = () => {
 
     return (
 
-        <div>
+        <div className="container">
             <h1>COVID-19 Statistics by Country</h1>
 
             <>
@@ -308,10 +311,10 @@ const Country = () => {
                     {currentResults.map((country, index) => (
                         <tr key={index}>
                             <td>{country.country}</td>
-                            <td>{country.cases}</td>
-                            <td>{country.deaths}</td>
-                            <td>{country.recovered}</td>
-                            <td>{country.active}</td>
+                            <td>{numberFormat.format(country.cases)}</td>
+                            <td>{numberFormat.format(country.deaths)}</td>
+                            <td>{numberFormat.format(country.recovered)}</td>
+                            <td>{numberFormat.format(country.active)}</td>
                             <td>
                                 <Button variant="secondary" onClick={() => handleShowModal(country)}>
                                     Add

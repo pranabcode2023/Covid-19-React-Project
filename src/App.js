@@ -14,21 +14,36 @@ import ProtectedRoute from './Components/ProtectedRoute'
 import Login from './Pages/Login'
 import Covid19Cases from './Components/Covid19Cases'
 import RedAlert from './Components/RedAlert'
+// import { NumericFormat } from 'react-number-format';
 
 
 function App() {
   const [demoUser, setDemoUser] = useState({ email: "demo@email.com", username: "Demoman" });
+
   return (
     <>
 
       <div className="App">
+
+        {/* <p>
+          <NumericFormat
+            type="text"
+            value={1231231}
+            thousandsGroupStyle="lakh"
+            thousandSeparator=","
+          />
+        </p> */}
+
         <div className="bg-image-wrapper">
 
           <AuthContextProvider>
+
+
             <Navbar demoUser={demoUser} setDemoUser={setDemoUser} />
-            <Routes>
+            <Routes >
               <Route path='/' element={<Homepage />} />
               <Route path='/Countries' element={<Countries />} />
+
               <Route path='/RedAlert' element={<RedAlert />} />
 
               <Route path='*' element={<Error404 />} />
