@@ -5,11 +5,15 @@
   box-sizing: border-box;
     text-align: center;
     /* color: #ddd; */
+    
 }
 
 body {
    font-family: "Sofia", sans-serif;
     font-size: 20px;
+    /* background-image: url('./Images/blurbackground_img.jpg');
+      background-size: cover;
+      background-repeat: no-repeat; */
 }
 
 /* *********************************  backgroundimage  *************************** */
