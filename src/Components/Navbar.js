@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom';
+// import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,7 +12,8 @@ import { AuthContext } from '../contexts/AuthContext';
 
 function OffcanvasNavbar() {
 
-    const { user, logOut, createNewUser, logIn } = useContext(AuthContext);
+    // const { user, logOut, createNewUser, logIn } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const location = useLocation();
     const linkStyle = {
         color: "darkblue",
@@ -60,16 +62,16 @@ function OffcanvasNavbar() {
                                         : null}
 
 
-                                    <hr />
+                                    {/* <hr />
                                     <NavDropdown
                                         title="Show More"
                                         id={`offcanvasNavbarDropdown-expand-${expand}`}>
-                                        {/* <NavLink to='/History' style={({ isActive }) => isActive ? linkStyle : null}>History</NavLink>
-                                        <NavLink to='/Usa' style={({ isActive }) => isActive ? linkStyle : null}>Usa</NavLink> */}
+                                        <NavLink to='/History' style={({ isActive }) => isActive ? linkStyle : null}>History</NavLink>
+                                        <NavLink to='/Usa' style={({ isActive }) => isActive ? linkStyle : null}>Usa</NavLink>
                                         <NavDropdown.Divider />
-                                        {/* <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>About</NavLink> */}
+                                        <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>About</NavLink>
                                     </NavDropdown>
-                                    <hr />
+                                    <hr /> */}
                                 </Nav>
                                 {/* <img className="covid19_img" src="Images/covid19_img" alt="Covid-19" /> */}
                             </Offcanvas.Body>
