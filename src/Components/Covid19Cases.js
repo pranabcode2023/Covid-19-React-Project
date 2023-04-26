@@ -25,32 +25,35 @@ const Covid19Cases = () => {
     }, []);
 
     return (
-
-        <div className="container">
-            <h1>Covid_19Cases</h1>
+        <div>
+            <h1>New Cases</h1>
             <>
                 <Button variant="secondary"
-                    style={{
-                        color: 'darkblue',
-                        display: "flex"
-                    }} onClick={goBack} >Back to About</Button>
+                    style={{ color: 'darkblue' }}
+                    onClick={goBack} >Back to Show More</Button>
             </>
 
-            {cases.map((patient, index) => (
-                <div key={index} className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">{patient.name}</h5>
-                        <p className="card-text">Age: {patient.age}</p>
-                        <p className="card-text">Gender: {patient.gender}</p>
-                        <p className="card-text">Nationality: {patient.nationality}</p>
-                        <p className="card-text">Existing Health Conditions: {patient.conditions}</p>
-                        <p className="card-text">Medications: {patient.medications}</p>
-                        <p className="card-text">Vaccination Status: {patient.vaccinated}</p>
-                        <p className="card-text">Recent Travel: {patient.travel}</p>
-                        <p className="card-text current-date">Date: {currentDate}</p>
+
+
+            <div style={{ display: "flex", justifyContent: 'center' }} >
+
+                {cases.map((patient, index) => (
+                    <div key={index} className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">{patient.name}</h5>
+                            <p className="card-text">Age: {patient.age}</p>
+                            <p className="card-text">Gender: {patient.gender}</p>
+                            <p className="card-text">Nationality: {patient.nationality}</p>
+                            <p className="card-text">Existing Health Conditions: {patient.conditions}</p>
+                            <p className="card-text">Medications: {patient.medications}</p>
+                            <p className="card-text">Vaccination Status: {patient.vaccinated}</p>
+                            <p className="card-text">Recent Travel: {patient.travel}</p>
+                            <p className="card-text current-date">Date: {currentDate}</p>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+
         </div>
     );
 };

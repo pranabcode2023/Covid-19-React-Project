@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AuthContext } from '../contexts/AuthContext';
 
@@ -43,19 +43,19 @@ function OffcanvasNavbar() {
                             <Offcanvas.Body>
                                 <Nav >
                                     <hr />
-                                    <NavLink to='/RedAlert' style={({ isActive }) => isActive ? linkStyle : null}>Update</NavLink>
+                                    <NavLink to='/RedAlert' style={({ isActive }) => isActive ? linkStyle : null}>Alert Countries</NavLink>
 
                                     {/* <hr />
                                     <NavLink to='/' style={({ isActive }) => isActive ? linkStyle : null}>HomePage</NavLink>
                                     <hr /> */}
-                                    <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>About</NavLink>
+                                    <NavLink to='/about' style={({ isActive }) => isActive ? linkStyle : null}>Show More</NavLink>
 
                                     <hr />
                                     {location.pathname.includes("about") ?
                                         <>
                                             {/* <NavLink to='/About/LoginForm' style={({ isActive }) => isActive ? linkStyle : null}>LoginForm</NavLink> */}
                                             <NavLink to='/About/Country' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 Data</NavLink>
-                                            <NavLink to='/About/Covid19Cases' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 Cases</NavLink>
+                                            <NavLink to='/About/Covid19Cases' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 New Cases</NavLink>
                                             <NavLink to='/About/PieChart' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 PieChart</NavLink>
                                             <NavLink to='/About/Map' style={({ isActive }) => isActive ? linkStyle : null}>Covid_19 Vaccine Map</NavLink>
                                         </>

@@ -121,7 +121,7 @@ const Country = () => {
                     style={{
                         color: 'darkblue',
                         display: "flex"
-                    }} onClick={goBack} >Back to About</Button>
+                    }} onClick={goBack} >Back to Show More</Button>
             </>
 
             <input type="text" placeholder="Search by country name" onChange={handleSearch} />

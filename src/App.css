@@ -57,6 +57,10 @@ input[type="text"] {
   max-width: auto;
   margin: 0 auto;
   /* border: 2px solid rgb(227, 4, 4); */
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   overflow: hidden;
 }
 
@@ -285,15 +289,17 @@ canvas {
 
 /* ***************************Page LoginForm/ userprofileform****************** */
 
-.login-form {
+/* .login-form {
   display: flex;
   justify-content: center;
   align-items: center;
   
-}
+} */
 
 .forms-container {
-  display: flex;
+  /* display: flex; */
+  margin: 20px;
+  padding: 20px;
 }
 
 form {
@@ -422,13 +428,13 @@ button[type="submit"]:hover {
 /* 
 *****************covid19Casess Page /cards**************************** */
 
-.container {
+/* .container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 
-}
+} */
 
 .card {
   width: 300px;

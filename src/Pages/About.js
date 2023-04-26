@@ -48,17 +48,16 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 function About() {
     const location = useLocation();
     const linkStyle = {
+        display: 'flex-start',
         color: 'darkblue',
         fontSize: '25px',
         fontWeight: 'bold',
         textDecoration: 'none',
-        display: 'flex',
-        border: '1px solid darkblue',
-        padding: '10px',
+        border: '2px solid darkblue',
+        padding: '5px',
         borderRadius: '5px',
-        margin: '10px auto', // center horizontally
+        margin: '5px', // center horizontally
         textAlign: 'center',
-        width: '300px',
         backgroundColor: '#f1f1f1',
     };
     return (
@@ -71,7 +70,7 @@ function About() {
                 <Outlet />
             ) : (
                 <>
-                    <h1>About</h1>
+                    <h1>Show More</h1>
                     <hr />
 
                     {location.pathname.includes('about') ? (
@@ -94,7 +93,7 @@ function About() {
                                         : linkStyle
                                 }
                             >
-                                Covid_19 Cases
+                                Covid_19 New Cases
                             </NavLink>
                             <NavLink
                                 to="/About/PieChart"

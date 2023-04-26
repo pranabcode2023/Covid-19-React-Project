@@ -92,6 +92,7 @@ const Map = () => {
         <div>
 
             <h1>Vaccine Map</h1>
+            <p>Working on it</p>
         </div>
     )
 }

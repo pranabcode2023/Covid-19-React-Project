@@ -30,10 +30,11 @@ function LoginForm({ functionType }) {
     }
 
     return (
-        <div className="login-form">
+        <div className="login-form" style={{ display: "flex", justifyContent: 'center', margin: '20px' }}>
             {functionType === "register" && (
                 <form onSubmit={handleSubmit}>
                     <label>
+                        <h1>Register</h1>
                         Email:
                         <input className='loginInput' placeholder='email' value={email} onChange={handleEmailChange} type='email' />
                     </label>
@@ -41,13 +42,14 @@ function LoginForm({ functionType }) {
                         Password:
                         <input className='loginInput' type='password' placeholder='password' value={password} onChange={(event) => setPassword(event.target.value)} />
                     </label>
-                    <Button className="loginInput" type="submit">Registration</Button>
+                    <Button className="login-button" type="submit">Registration</Button>
                     <p>Already Registered? Go for log in</p>
                 </form>
             )}
             {functionType === "login" && (
                 <form onSubmit={handleSubmit} >
                     <label>
+                        <h1>Login</h1>
                         Email:
                         <input className='loginInput' placeholder='email' value={email} onChange={handleEmailChange} type='email' />
                     </label>

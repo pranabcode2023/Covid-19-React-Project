@@ -49,7 +49,7 @@ const PieChart = () => {
           style={{
             color: 'darkblue',
           }}
-          onClick={goBack} >Back to About</Button>
+          onClick={goBack} >Back to Show More</Button>
       </>
 
       <Doughnut data={chartData} />
