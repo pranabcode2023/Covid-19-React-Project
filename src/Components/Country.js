@@ -151,7 +151,7 @@ const Country = () => {
                             <td>{numberFormat.format(country.active)}</td>
                             <td>
                                 <Button variant="secondary" onClick={() => handleShowModal(country)}>
-                                    Add
+                                    Add New Case
                                 </Button>
                             </td>
                         </tr>

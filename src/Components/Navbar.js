@@ -37,7 +37,7 @@ function OffcanvasNavbar() {
                         >
                             <Offcanvas.Header closeButton>
                                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                                    Navigation
+                                    Menu
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
