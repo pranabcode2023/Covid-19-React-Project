@@ -136,9 +136,9 @@ const Countries = () => {
             <div className="pagination">
                 <ul className="pagination">
                     <li className="page-item">
-                        <button className="page-link" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+                        <Button variant="primary" className="page-link" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
                             Previous
-                        </button>
+                        </Button>
                     </li>
                     {Array.from({ length: totalPages }, (_, i) => (
                         <li className={`page-item ${i + 1 === currentPage ? 'active' : ''}`} key={i}>
@@ -148,9 +148,9 @@ const Countries = () => {
                         </li>
                     ))}
                     <li className="page-item">
-                        <button className="page-link" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                        <Button variant="primary" className="page-link" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
                             Next
-                        </button>
+                        </Button>
                     </li>
                 </ul>
             </div>
@@ -179,7 +179,7 @@ const Countries = () => {
                                 </ul> */}
                             </div>
                             {/* <Button variant="danger" onClick={() => handleAddToAlert(selectedCountry)}>Add to in Alert</Button> */}
-                            <Button variant="primary" onClick={() => handleAddToAlert(selectedCountry)}>Add Alert </Button>
+                            <Button variant="primary" onClick={() => handleAddToAlert(selectedCountry)}>Add to Alert List</Button>
 
                         </>
                     )}
