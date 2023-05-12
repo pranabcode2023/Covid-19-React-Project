@@ -3,13 +3,14 @@
 
 * {
   box-sizing: border-box;
-    text-align: center;
+  text-align: center;
     /* color: #ddd; */
     
 }
 
 body {
-   font-family: "Sofia", sans-serif;
+  font-family: sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-size: 20px;
     /* background-image: url('./Images/blurbackground_img.jpg');
       background-size: cover;
@@ -40,7 +41,8 @@ body {
 }
 
 
-input[type="text"] {
+input[type="text"], 
+input[type="password"]{
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -287,141 +289,68 @@ canvas {
   }
 }
 
-/* ***************************Page LoginForm/ userprofileform****************** */
+/* 
+login/register */
 
-/* .login-form {
+.login {
   display: flex;
-  justify-content: center;
   align-items: center;
-  
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 80vh;
+  background-color: #f8f9fd;
+  /* border: 2px solid red; */
+}
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 80vh;
+  background-color: #f8f9fd;
+  /* border: 2px solid red; */
+
+}
+
+.form {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* input[type="text"],
+input[type="password"] {
+  height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
 } */
 
-.forms-container {
-  /* display: flex; */
-  margin: 20px;
-  padding: 20px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  background-color: #888;
-
-}
-
-
-
-
-label {
-  font-size: 16px;
-  font-weight: bold;
-  width: 180px;
-}
-
-input[type="number"],
-select,
-textarea {
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 8px;
-  font-size: 16px;
-  width: 300px;
-  align-items: center;
-}
-
 button[type="submit"] {
-  background-color: #264ea0;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
+  margin-top: 10px;
   cursor: pointer;
-  font-size: 16px;
-  margin: 0.2rem;
+  font-size: 15px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background: #6cf0c2;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+}
 
-.login-form form {
+.input-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 0px;
-  border: 3px solid #394867;
-  justify-content: center;
-}
-
-.login-form label {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  /* border: 2px solid red; */
-}
-
-.loginInput {
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  width: 100%;
-  /* border: 2px solid red; */
-  align-items: center;
-}
-
-.login-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.login-button:hover {
-  background-color: #45a049;
-}
-
-.forgot-password {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.social-login {
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.social-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.Gmail-button,
-.facebook-button,
-.github-button {
-  background-color: #fff;
-  color: #555;
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 0 10px;
-}
-
-.Gmail-button:hover,
-.facebook-button:hover,
-.github-button:hover {
-  background-color: #eee;
+  gap: 8px;
+  margin: 10px;
 }
 
 

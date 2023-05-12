@@ -30,46 +30,36 @@ function LoginForm({ functionType }) {
     }
 
     return (
-        <div className="login-form" style={{ display: "flex", justifyContent: 'center', margin: '20px' }}>
+        <div className="login" style={{ display: "flex", justifyContent: 'center', margin: '20px' }}>
             {functionType === "register" && (
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        <h1>Register</h1>
-                        Email:
-                        <input className='loginInput' placeholder='email' value={email} onChange={handleEmailChange} type='email' />
-                    </label>
-                    <label>
-                        Password:
-                        <input className='loginInput' type='password' placeholder='password' value={password} onChange={(event) => setPassword(event.target.value)} />
-                    </label>
-                    <Button className="login-button" type="submit">Registration</Button>
+                <form className="form" onSubmit={handleSubmit}>
+                    <h1>Register</h1>
+                    <div className="input-container">
+                        <label>Username </label>
+                        <input type='text' name='email' placeholder='Email' onChange={handleEmailChange} />
+                    </div>
+                    <div className="input-container">
+                        <label>Password </label>
+                        <input type='password' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
+                    </div>
+                    <div className="button-container">
+                        <button type='submit'>Login</button>
+                    </div>
                     <p>Already Registered? Go for log in</p>
                 </form>
             )}
             {functionType === "login" && (
-                <form onSubmit={handleSubmit} >
-                    <label>
-                        <h1>Login</h1>
-                        Email:
-                        <input className='loginInput' placeholder='email' value={email} onChange={handleEmailChange} type='email' />
-                    </label>
-                    <label>
-                        Password:
-                        <input className='loginInput' type='password' placeholder='password' value={password} onChange={(event) => setPassword(event.target.value)} />
-                    </label>
-                    <Button className="login-button" type="submit" >Log in</Button>
-                    <div className="forgot-password">
-                        <a href="#">Forgot password?</a>
+                <form className="form" onSubmit={handleSubmit} >
+                    <h1>Login</h1>
+                    <div className="input-container">
+                        <input type='text' name='email' placeholder='Email' onChange={handleEmailChange} />
                     </div>
-                    <div className="social-login">
-                        <p>Or login with:</p>
-                        <div className="social-buttons">
-                            <button className="Gmail-button" type="button">Gmail</button>
-                            <button className="facebook-button" type="button">Facebook</button>
-                            <button className="github-button" type="button">Github</button>
-                        </div>
+                    <div className="input-container">
+                        <input type='password' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
                     </div>
-
+                    <div className="button-container">
+                        <button type='submit'>Login</button>
+                    </div>
                 </form>
             )}
 
