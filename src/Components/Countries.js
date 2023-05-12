@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { db } from '../fbConfig';
+import { db } from '../Pages/fbConfig';
 import { useNavigate } from 'react-router-dom';
 
 
