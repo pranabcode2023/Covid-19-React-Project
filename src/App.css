@@ -42,7 +42,11 @@ body {
 
 
 input[type="text"], 
-input[type="password"]{
+input[type="password"],
+input[type="number"],
+textarea[id="textarea"],
+select [id="options"] 
+{
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
