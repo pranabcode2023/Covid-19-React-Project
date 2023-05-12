@@ -85,7 +85,7 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
             </div>
             <div>
                 <label>Gender:</label>
-                <select id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+                <select id="options" value={gender} onChange={(e) => setGender(e.target.value)}>
                     <option value=""></option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -94,15 +94,15 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
             </div>
             <div>
                 <label conditions="conditions">Existing Health Conditions:</label>
-                <textarea id="conditions" value={conditions} onChange={(e) => setConditions(e.target.value)} />
+                <textarea id="textarea" value={conditions} onChange={(e) => setConditions(e.target.value)} />
             </div>
             <div>
                 <label>Medications:</label>
-                <textarea id="medications" value={medications} onChange={(e) => setMedications(e.target.value)} />
+                <textarea id="textarea" value={medications} onChange={(e) => setMedications(e.target.value)} />
             </div>
             <div>
                 <label>Vaccination Status:</label>
-                <select id="vaccinated" value={vaccinated} onChange={(e) => setVaccinated(e.target.value)}>
+                <select id="options" value={vaccinated} onChange={(e) => setVaccinated(e.target.value)}>
                     <option value=""></option>
                     <option value="fully vaccinated">Fully Vaccinated</option>
                     <option value="partially vaccinated">Partially Vaccinated</option>
@@ -111,7 +111,7 @@ const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {
             </div>
             <div>
                 <label>Recent Travel:</label>
-                <textarea id="travel" value={travel} onChange={(e) => setTravel(e.target.value)} />
+                <textarea id="textarea" value={travel} onChange={(e) => setTravel(e.target.value)} />
             </div>
             <button type="submit">Submit</button>
             <button onClick={handleRefresh}>Refresh</button>
