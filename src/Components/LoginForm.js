@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../contexts/AuthContext';
-import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; // import useNavigate
 
 function LoginForm({ functionType }) {
