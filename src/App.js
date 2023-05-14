@@ -16,6 +16,9 @@ import Covid19Cases from './Components/Covid19Cases'
 import RedAlert from './Components/RedAlert'
 // import { NumericFormat } from 'react-number-format';
 
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 
 function App() {
   const [demoUser, setDemoUser] = useState({ email: "demo@email.com", username: "Demoman" });
@@ -34,35 +37,35 @@ function App() {
           />
         </p> */}
 
-        <div className="bg-image-wrapper">
-
-          <AuthContextProvider>
 
 
-            <Navbar demoUser={demoUser} setDemoUser={setDemoUser} />
-            <Routes >
-              <Route path='/' element={<Homepage />} />
-              <Route path='/Countries' element={<Countries />} />
-
-              <Route path='/RedAlert' element={<RedAlert />} />
-
-              <Route path='*' element={<Error404 />} />
-
-              <Route path='login' element={<Login />} />
-
-              <Route path='/About' element={<About />} >
-                <Route path='Country' element={<ProtectedRoute><Country /></ProtectedRoute>} />
-                <Route path='Covid19Cases' element={<ProtectedRoute><Covid19Cases /></ProtectedRoute>} />
-                <Route path='PieChart' element={<ProtectedRoute >< PieChart /></ProtectedRoute>} />
-                <Route path='Map' element={< Map />} />
+        <AuthContextProvider>
 
 
-              </Route>
-            </Routes>
-          </AuthContextProvider>
+          <Navbar demoUser={demoUser} setDemoUser={setDemoUser} />
+          <Routes >
+            <Route path='/' element={<Homepage />} />
+            <Route path='/Countries' element={<Countries />} />
 
-        </div>
+            <Route path='/RedAlert' element={<RedAlert />} />
+
+            <Route path='*' element={<Error404 />} />
+
+            <Route path='login' element={<Login />} />
+
+            <Route path='/About' element={<About />} >
+              <Route path='Country' element={<ProtectedRoute><Country /></ProtectedRoute>} />
+              <Route path='Covid19Cases' element={<ProtectedRoute><Covid19Cases /></ProtectedRoute>} />
+              <Route path='PieChart' element={<ProtectedRoute >< PieChart /></ProtectedRoute>} />
+              <Route path='Map' element={< Map />} />
+
+
+            </Route>
+          </Routes>
+        </AuthContextProvider>
+
       </div>
+
     </>
   );
 }

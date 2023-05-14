@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../Pages/fbConfig';
+import { db } from '../Pages/FbConfig';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 

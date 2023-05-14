@@ -42,7 +42,7 @@ function LoginForm({ functionType }) {
                         <input type='password' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
                     </div>
                     <div className="button-container">
-                        <button type='submit'>Login</button>
+                        <button type='submit'>Register</button>
                     </div>
                     <p>Already Registered? Go for log in</p>
                 </form>

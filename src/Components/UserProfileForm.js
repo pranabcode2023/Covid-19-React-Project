@@ -3,7 +3,7 @@
 import { useContext, useState, } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { collection, addDoc, } from "firebase/firestore";
-import { db } from '../Pages/fbConfig';
+import { db } from '../Pages/FbConfig';
 import { useNavigate } from 'react-router-dom';
 
 const UserProfileForm = ({ country, onSubmit, onRefresh, onDelete }) => {

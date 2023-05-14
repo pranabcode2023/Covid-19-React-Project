@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { collection, getDocs, deleteDoc, doc, query, where } from 'firebase/firestore';
-import { db } from '../Pages/fbConfig';
+import { db } from '../Pages/FbConfig';
 import { Button } from 'react-bootstrap';
 
 const RedAlert = () => {
