@@ -15,6 +15,8 @@ import Login from './Pages/Login'
 import Covid19Cases from './Components/Covid19Cases'
 import RedAlert from './Components/RedAlert'
 // import { NumericFormat } from 'react-number-format';
+// 
+
 
 
 
