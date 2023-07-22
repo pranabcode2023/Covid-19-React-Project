@@ -94,38 +94,32 @@ const Countries = () => {
     };
 
     return (
-        <div className="container">
+        <div className="homePageContainer">
             <div className="Search">
-                <div className="col-md-12">
-                    <div className="search">
-                        <input type="text" placeholder="Search countries" onChange={handleSearch} />
-                    </div>
-                </div>
+                <input type="text" placeholder="Search countries" onChange={handleSearch} />
             </div>
 
-            <div className="cardsContainer">
+        <div className="cardsContainer">
                 {currentResults && currentResults.map((country) => (
-                    <div className="col-md-4" key={country.country}>
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <img src={country.countryInfo.flag} alt="" className="image-fluid" />
-                                    <div className="mt-3 mb-3">
-                                        <h3>{country.country}</h3>
-                                    </div>
+                    <div className="flip-card" key={country.country}>
+                        <div className="flip-card-inner">
+                            <div className="flip-card-front">
+                                <img src={country.countryInfo.flag} alt="" className="image-fluid" />
+                                <div className="mt-3 mb-3">
+                                    <h3>{country.country}</h3>
                                 </div>
-                                <div className="flip-card-back">
-                                    <h4>{country.country}</h4>
-                                    <hr />
-                                    <p>Cases: {numberFormat.format(country.cases)}</p>
-                                    <p>Deaths: {numberFormat.format(country.deaths)}</p>
-                                    <p>Recovered: {numberFormat.format(country.recovered)}</p>
+                            </div>
+                            <div className="flip-card-back">
+                                <h4>{country.country}</h4>
+                                <hr />
+                                <p>Cases: {numberFormat.format(country.cases)}</p>
+                                <p>Deaths: {numberFormat.format(country.deaths)}</p>
+                                <p>Recovered: {numberFormat.format(country.recovered)}</p>
 
-                                    <Button variant="primary" onClick={() => handleShowModal(country)}>View Details</Button>
-
-                                </div>
+                                <Button variant="primary" onClick={() => handleShowModal(country)}>View Details</Button>
 
                             </div>
+
                         </div>
                     </div>
 
