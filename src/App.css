@@ -16,7 +16,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: 5px solid red; */
+  border: 5px solid red;
 }
 
 
@@ -24,8 +24,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   margin-top: 20px;
+  border: 5px solid rgb(51, 255, 0);
 }
 
 
@@ -34,7 +34,7 @@ body {
   background-color: transparent;
   width: 300px;
   height: 300px;
-  perspective: 1000px;
+  /* perspective: 1000px; */
   margin: 20px auto;
   box-shadow: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -304,26 +304,46 @@ button[type="submit"]:hover {
 
 /* Media Queries */
 
-/* For screen sizes up to 768px */
+
+/* For screen sizes up to 768px (Mobile) */
+
 @media screen and (max-width: 768px) {
-  .flip-card {
-    width: 100%;
-    max-width: 200px;
+  body {
+    color: blue;
+  }
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    border: 5px solid rgb(51, 255, 0);
+  }
+
+.flip-card {
+    background-color: transparent;
+    width: 200px;
     height: 300px;
+    perspective: 1000px;
     margin: 10px auto;
+    box-shadow: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
   }
   
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+  }
+
   .PieChart-container {
     width: 100%;
     max-width: 400px;
-  }
-}
-
-
-/* For screen sizes up to 600px (Mobile) */
-@media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
   }
 }
 
