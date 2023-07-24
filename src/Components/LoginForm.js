@@ -3,68 +3,81 @@ import { AuthContext } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom'; // import useNavigate
 
 function LoginForm({ functionType }) {
-    const { createNewUser, logIn } = useContext(AuthContext);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const { createNewUser, logIn } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const navigate = useNavigate();     // initialize navigate
+  const navigate = useNavigate(); // initialize navigate
 
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value)
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (functionType === "register") {
+      createNewUser(email, password);
+      setEmail("");
+      setPassword("");
     }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (functionType === "register") {
-            createNewUser(email, password);
-            setEmail('');
-            setPassword('');
-        }
-        if (functionType === "login") {
-            logIn(email, password);
-            setEmail('');
-            setPassword('');
-            navigate('/about');      // redirect to the About page
-        }
+    if (functionType === "login") {
+      logIn(email, password);
+      setEmail("");
+      setPassword("");
+      navigate("/about"); // redirect to the About page
     }
+  };
 
-    return (
-        <div className="registerLoginContainer" >
-            {functionType === "register" && (
-                <form className="form" onSubmit={handleSubmit}>
-                    <h1>Register</h1>
-                  
-                        <input type='text' name='email' placeholder='Email' onChange={handleEmailChange} />
-                 
+  return (
+    <div className="registerLoginContainer">
+      {functionType === "register" && (
+        <form className="formContainer" onSubmit={handleSubmit}>
+          <h1>Register</h1>
 
-                 
-                    
-                        <input type='text' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
-                    
-                  
-                        <button type='submit'>Register</button>
-                    
-                    <p>Already Registered? Go for log in</p>
-                </form>
-            )}
-            {functionType === "login" && (
-                <form className="form" onSubmit={handleSubmit} >
-                    <h1>Login</h1>
-                
-                        <input type='text' name='email' placeholder='Email' onChange={handleEmailChange} />
-               
-                  
-                        <input type='text' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
-                   
-                   
-                        <button type='submit'>Login</button>
-                    
-                        <p>No Account ? Go for Register</p>
-                </form>
-            )}
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            onChange={handleEmailChange}
+          />
 
-        </div>
-    );
+          <input
+            type="text"
+            name="password"
+            placeholder="Password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+
+          <button type="submit">Register</button>
+
+          <p>Already Registered? Go for log in</p>
+        </form>
+      )}
+      {functionType === "login" && (
+        <form className="formContainer" onSubmit={handleSubmit}>
+          <h1>Login</h1>
+
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            onChange={handleEmailChange}
+          />
+
+          <input
+            type="text"
+            name="password"
+            placeholder="Password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+
+          <button type="submit">Login</button>
+
+          <p>No Account ? Go for Register</p>
+        </form>
+      )}
+    </div>
+  );
 }
 
 export default LoginForm;
