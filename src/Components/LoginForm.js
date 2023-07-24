@@ -29,36 +29,37 @@ function LoginForm({ functionType }) {
     }
 
     return (
-        <div className="login" style={{ display: "flex", justifyContent: 'center', margin: '20px' }}>
+        <div className="registerLoginContainer" >
             {functionType === "register" && (
                 <form className="form" onSubmit={handleSubmit}>
                     <h1>Register</h1>
-                    <div className="input-container">
-                        <label>Username </label>
+                  
                         <input type='text' name='email' placeholder='Email' onChange={handleEmailChange} />
-                    </div>
-                    <div className="input-container">
-                        <label>Password </label>
-                        <input type='password' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
-                    </div>
-                    <div className="button-container">
+                 
+
+                 
+                    
+                        <input type='text' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
+                    
+                  
                         <button type='submit'>Register</button>
-                    </div>
+                    
                     <p>Already Registered? Go for log in</p>
                 </form>
             )}
             {functionType === "login" && (
                 <form className="form" onSubmit={handleSubmit} >
                     <h1>Login</h1>
-                    <div className="input-container">
+                
                         <input type='text' name='email' placeholder='Email' onChange={handleEmailChange} />
-                    </div>
-                    <div className="input-container">
-                        <input type='password' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
-                    </div>
-                    <div className="button-container">
+               
+                  
+                        <input type='text' name='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
+                   
+                   
                         <button type='submit'>Login</button>
-                    </div>
+                    
+                        <p>No Account ? Go for Register</p>
                 </form>
             )}
 
