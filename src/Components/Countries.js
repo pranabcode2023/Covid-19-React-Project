@@ -95,9 +95,8 @@ const Countries = () => {
 
     return (
         <div className="homePageContainer">
-            <div className="Search">
                 <input type="text" placeholder="Search countries" onChange={handleSearch} />
-            </div>
+          
 
         <div className="cardsContainer">
                 {currentResults && currentResults.map((country) => (

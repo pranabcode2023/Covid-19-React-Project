@@ -112,91 +112,122 @@ const Country = () => {
 
 
     return (
+      <div className="countryPageContainer">
+        <div className='headerButton'>
+          <h1>COVID-19 Statistics by Country</h1>
 
-        <div className="container">
-            <h1>COVID-19 Statistics by Country</h1>
-
-            <>
-                <Button variant="secondary"
-                    style={{
-                        color: 'darkblue',
-                        display: "flex"
-                    }} onClick={goBack} >Back to Show More</Button>
-            </>
-
-            <input type="text" placeholder="Search by country name" onChange={handleSearch} />
-            {error && <p>{error}</p>}
-            {userProfile && selectedCountry && (
-                <PersonalizedProfile country={selectedCountry} userProfile={userProfile} />
-            )}
-
-            <table className="table" >
-                <thead>
-                    <tr>
-                        <th>Country</th>
-                        <th>Total Cases</th>
-                        <th>Total Deaths</th>
-                        <th>Total Recovered</th>
-                        <th>Active Cases</th>
-                        <th>Profile</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {currentResults.map((country, index) => (
-                        <tr key={index}>
-                            <td>{country.country}</td>
-                            <td>{numberFormat.format(country.cases)}</td>
-                            <td>{numberFormat.format(country.deaths)}</td>
-                            <td>{numberFormat.format(country.recovered)}</td>
-                            <td>{numberFormat.format(country.active)}</td>
-                            <td>
-                                <Button variant="secondary" onClick={() => handleShowModal(country)}>
-                                    Add New Case
-                                </Button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-            <div className="pagination">
-                <ul className="pagination">
-                    <li className="page-item">
-                        <Button variant="primary" className="page-link" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-                            Previous
-                        </Button>
-                    </li>
-                    {Array.from({ length: totalPages }, (_, i) => (
-                        <li className={`page-item ${i + 1 === currentPage ? 'active' : ''}`} key={i}>
-                            <button className="page-link" onClick={() => handlePageChange(i + 1)}>
-                                {i + 1}
-                            </button>
-                        </li>
-                    ))}
-                    <li className="page-item">
-                        <Button variant="primary" className="page-link" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-                            Next
-                        </Button>
-                    </li>
-                </ul>
-            </div>
-
-            <Modal show={showModal} onHide={handleCloseModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Disease Profile</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    {selectedCountry && (
-                        <UserProfileForm
-                            country={selectedCountry}
-                            onSubmit={handleUserProfileSubmit}
-                        />
-                    )}
-                    {userProfile && selectedCountry && (
-                        <PersonalizedProfile country={selectedCountry} userProfile={userProfile} />
-                    )}
-                </Modal.Body>
-            </Modal>
+          <>
+            <Button
+              variant="primary"
+              onClick={goBack}
+            >
+              Back to Show More
+            </Button>
+          </>
         </div>
+
+        <input
+          type="text"
+          placeholder="Search by country name"
+          onChange={handleSearch}
+        />
+        {error && <p>{error}</p>}
+        {userProfile && selectedCountry && (
+          <PersonalizedProfile
+            country={selectedCountry}
+            userProfile={userProfile}
+          />
+        )}
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Total Cases</th>
+              <th>Total Deaths</th>
+              <th>Total Recovered</th>
+              <th>Active Cases</th>
+              <th>Profile</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentResults.map((country, index) => (
+              <tr key={index}>
+                <td>{country.country}</td>
+                <td>{numberFormat.format(country.cases)}</td>
+                <td>{numberFormat.format(country.deaths)}</td>
+                <td>{numberFormat.format(country.recovered)}</td>
+                <td>{numberFormat.format(country.active)}</td>
+                <td>
+                  <Button
+                    variant="secondary"
+                    onClick={() => handleShowModal(country)}
+                  >
+                    Add New Case
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="pagination">
+          <ul className="pagination">
+            <li className="page-item">
+              <Button
+                variant="primary"
+                className="page-link"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                Previous
+              </Button>
+            </li>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <li
+                className={`page-item ${i + 1 === currentPage ? "active" : ""}`}
+                key={i}
+              >
+                <button
+                  className="page-link"
+                  onClick={() => handlePageChange(i + 1)}
+                >
+                  {i + 1}
+                </button>
+              </li>
+            ))}
+            <li className="page-item">
+              <Button
+                variant="primary"
+                className="page-link"
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </Button>
+            </li>
+          </ul>
+        </div>
+
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Disease Profile</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {selectedCountry && (
+              <UserProfileForm
+                country={selectedCountry}
+                onSubmit={handleUserProfileSubmit}
+              />
+            )}
+            {userProfile && selectedCountry && (
+              <PersonalizedProfile
+                country={selectedCountry}
+                userProfile={userProfile}
+              />
+            )}
+          </Modal.Body>
+        </Modal>
+      </div>
     );
 };
 

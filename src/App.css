@@ -10,7 +10,39 @@ body {
   font-size: 20px;
 }
 
-/* Hompage cards */
+input[type="text"],
+select [id="options"] {
+  padding: 8px 8px ;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #394867;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #f1f1f1;
+}
+
+
+
+/* button[type="submit"] {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #394867;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+button[type="submit"]:hover {
+  background: #6cf0c2;
+} */
+
+
+
+
+
+/*************************************** Hompage cards */
 
 .homePageContainer {
   display: flex;
@@ -81,7 +113,7 @@ body {
 }
 
 .image-fluid {
-  width: 80%;
+  width: 90%;
   height: auto;
   border-radius: 50%;
 }
@@ -90,7 +122,7 @@ body {
   font-size: 1.5rem;
 }
 
-/* Modal */
+/******************************************** Modal */
 
 .modal {
   display: none;
@@ -127,7 +159,7 @@ body {
   cursor: pointer;
 }
 
-/* Pagination */
+/***************************************** Pagination */
 
 .pagination {
   display: flex;
@@ -157,7 +189,18 @@ body {
   cursor: default;
 }
 
-/* Country page */
+/************************************ Country page */
+
+.countryPageContainer{
+  border: 2px solid red;
+}
+
+
+.countryPageHeaderButton{
+  margin: 10px;
+  /* border: 2px solid greenyellow;  */
+}
+
 
 .table {
   border-collapse: collapse;
@@ -176,7 +219,7 @@ body {
   background-color: #f2f2f2;
 }
 
-/* PieChart */
+/********************************* PieChart */
 
 .PieChart-container {
   display: flex;
@@ -212,7 +255,7 @@ canvas {
   }
 }
 
-/* Login/Register */
+/******************************************** Login/Register */
 
 .registerLoginContainer {
   display: flex;
@@ -225,19 +268,6 @@ canvas {
 border: 2px solid red;
 }
 
-
-
-input[type="text"],
-select [id="options"] {
-  padding: 8px 8px ;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #394867;
-  border-radius: 10px;
-  font-size: 16px;
-  background-color: #f1f1f1;
-}
-
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -247,24 +277,10 @@ select [id="options"] {
   border-radius: 10px;
 }
 
-button[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: #394867;
-  border: 1px solid #01d28e;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-button[type="submit"]:hover {
-  background: #6cf0c2;
-}
 
 
 
-/* Covid19Cases Page / Cards */
+/******************************************************** Covid19Cases Page / Cards */
 
 /* .newCaseContainer{
   border: 2px solid black;
@@ -312,7 +328,12 @@ margin: 10px;
   margin-top: 10px;
 }
 
-/* Media Queries */
+
+
+
+
+
+/**************************************************************** Media Queries */
 
 
 /* For screen sizes up to 768px (Mobile) */
