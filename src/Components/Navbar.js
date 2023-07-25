@@ -24,7 +24,7 @@ function OffcanvasNavbar() {
     return (
         <>
             {[false].map((expand) => (
-                <Navbar key={expand} bg="secondary" expand={expand} >
+                <Navbar className='navbar' key={expand} bg="secondary" expand={expand} >
                     <Container fluid>
                         <NavLink to='/' style={linkStyle}>Home page</NavLink>
                         {!user ? <NavLink to='/login' style={linkStyle}>Log in</NavLink> :

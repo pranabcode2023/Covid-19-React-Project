@@ -20,6 +20,9 @@ const Countries = () => {
   // const bigNum = 1000000000000000110000n;
   // console.log(numberFormat.format(bigNum));
 
+
+//   const goBack = () => navigate(-1);
+
   const handleAddToAlert = async (country) => {
     try {
       const alertData = {
@@ -97,7 +100,18 @@ const Countries = () => {
 
   return (
     <div className="homePageContainer">
+
+      <div className="homePageheaderButton">
       <h1>Covid-19 Worldwide</h1>
+
+        {/* <>
+          <Button variant="primary" onClick={goBack}>
+           Homepage
+          </Button>
+        </> */}
+      </div>
+
+
       <input
         type="text"
         placeholder="Search countries"

@@ -38,16 +38,35 @@ button[type="submit"]:hover {
   background: #6cf0c2;
 } */
 
+/* *****************************Navbar***************************** */
+
+.navbar{
+/* border: 2px solid red; */
+width: 100%;
+
+}
 
 
-
+@media screen and (max-width:768px) {
+  .navbar{
+    border: 2px solid red;
+    width: 100%;
+    
+    }
+}
 
 /*************************************** Hompage cards */
 
-.homePageContainer {
+/* .homePageContainer {
 
   border: 5px solid red;
+} */
+
+
+.homePageheaderButton{
+  margin: 10px;
 }
+
 
 .cardsContainer {
   display: flex;
@@ -337,7 +356,7 @@ canvas {
 
 /* For screen sizes up to 768px (Mobile) */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   body {
     color: blue;
   }
