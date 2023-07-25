@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom'; // import useNavigate
-
+import { Button } from 'react-bootstrap';
 function LoginForm({ functionType }) {
   const { createNewUser, logIn } = useContext(AuthContext);
   const [email, setEmail] = useState("");
@@ -30,8 +30,9 @@ function LoginForm({ functionType }) {
 
   return (
     <div className="registerLoginContainer">
+      <div className="formContainer">
       {functionType === "register" && (
-        <form className="formContainer" onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           <h1>Register</h1>
 
           <input
@@ -48,13 +49,17 @@ function LoginForm({ functionType }) {
             onChange={(event) => setPassword(event.target.value)}
           />
 
-          <button type="submit">Register</button>
+          <Button variant="primary">Register</Button>
 
           <p>Already Registered? Go for log in</p>
         </form>
       )}
+      </div>
+      
+      <div className="formContainer">
+        
       {functionType === "login" && (
-        <form className="formContainer" onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           <h1>Login</h1>
 
           <input
@@ -71,11 +76,13 @@ function LoginForm({ functionType }) {
             onChange={(event) => setPassword(event.target.value)}
           />
 
-          <button type="submit">Login</button>
+          <Button variant="primary">Login</Button>
 
           <p>No Account ? Go for Register</p>
         </form>
       )}
+      </div>
+      
     </div>
   );
 }

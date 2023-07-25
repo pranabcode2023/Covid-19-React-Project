@@ -4,7 +4,8 @@ import LoginForm from '../Components/LoginForm'
 function Login() {
 
     return (
-        <div style={{ display: "flex", justifyContent: 'center', margin: '80px' }}>
+        // <div  style={{ display: "flex", justifyContent: 'center', margin: '80px' }}>
+        <div  className='loginPageContainer'>
             {/* <h1>Register</h1> */}
             <LoginForm functionType={"register"} />
 

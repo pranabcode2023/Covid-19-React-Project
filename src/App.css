@@ -2,12 +2,14 @@
 * {
   box-sizing: border-box;
   text-align: center;
+  /* border: 2px solid red; */
 }
 
 body {
   font-family: sans-serif;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 20px;
+  /* border: 2px solid black; */
 }
 
 input[type="text"],
@@ -38,6 +40,28 @@ button[type="submit"]:hover {
   background: #6cf0c2;
 } */
 
+
+
+@media screen and (max-width: 768px) {
+  * {
+  width: 100%;
+    /* border: 2px solid blue; */
+  }
+  
+
+  body {
+    width: 100%;
+    /* border: 2px solid yellow; */
+  }
+
+  input[type="text"],
+  select [id="options"] {
+   width: 60%;
+  }
+  
+  
+}
+
 /* *****************************Navbar***************************** */
 
 .navbar{
@@ -50,18 +74,20 @@ width: 100%;
 @media screen and (max-width:768px) {
   .navbar{
     border: 2px solid red;
-    width: 100%;
+    width: inherit;
+    margin: 0 auto;
+    text-align: center;
     
     }
+      
 }
 
-/*************************************** Hompage cards */
+/*************************************** Hompage */
 
 /* .homePageContainer {
 
   border: 5px solid red;
-} */
-
+}  */
 
 .homePageheaderButton{
   margin: 10px;
@@ -137,7 +163,7 @@ width: 100%;
 .fs-4 {
   font-size: 1.5rem;
 }
-
+@media screen and (max-width: 768px) {}
 /******************************************** Modal */
 
 .modal {
@@ -174,7 +200,7 @@ width: 100%;
   text-decoration: none;
   cursor: pointer;
 }
-
+@media screen and (max-width: 768px) {}
 /***************************************** Pagination */
 
 .pagination {
@@ -205,6 +231,8 @@ width: 100%;
   cursor: default;
 }
 
+
+@media screen and (max-width: 768px) {}
 /************************************ Country page */
 
 /* .countryPageContainer{
@@ -234,6 +262,10 @@ width: 100%;
 .table th {
   background-color: #f2f2f2;
 }
+@media screen and (max-width: 768px) {}
+
+
+
 
 /********************************* PieChart */
 
@@ -272,20 +304,34 @@ canvas {
     transform: scale(1);
   }
 }
+@media screen and (max-width: 768px) {}
+
+
+
 
 /******************************************** Login/Register */
+
+.loginPageContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  /* border: 2px solid red; */
+}
 
 .registerLoginContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 400px;
+  width: 300px;
   padding: 8px 8px;
   margin: 20px;
-  background-color: #394867;
+  /* background-color: #394867; */
+  background-color: #f1f1f1;
   border-radius: 10px;
-  /* border: 2px solid red; */
+  border: 2px solid black;
 }
-
+/* 
 .formContainer {
   display: flex;
   flex-direction: column;
@@ -293,10 +339,23 @@ canvas {
   padding: 5rem 2rem;
   background-color: #f1f1f1;
   border-radius: 10px;
+} */
+
+
+@media screen and (max-width: 768px) {
+
+  .loginPageContainer{
+   /* border: 2px solid red; */
+  }
+
+
+  .registerLoginContainer {
+
+    /* border: 2px solid red; */
+   width: 100%;
+  }
+  
 }
-
-
-
 
 /******************************************************** Covid19Cases Page / Cards */
 
@@ -356,7 +415,7 @@ canvas {
 
 /* For screen sizes up to 768px (Mobile) */
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   body {
     color: blue;
   }
@@ -394,4 +453,4 @@ canvas {
     width: 100%;
     max-width: 400px;
   }
-}
+} */
