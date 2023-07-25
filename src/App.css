@@ -266,28 +266,28 @@ button[type="submit"]:hover {
 
 /* Covid19Cases Page / Cards */
 
-.newCaseContainer{
+/* .newCaseContainer{
   border: 2px solid black;
-}
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+} */
 
 .headerButton{
   margin: 10px;
-  border: 2px solid greenyellow; 
+  /* border: 2px solid greenyellow;  */
 }
-
-
 
 .cardContainer{
 display: flex;
 justify-content: center;
 margin: 10px;
-border: 2px solid red;
+/* border: 2px solid red; */
 }
 
-
-
-
 .cardBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
   margin: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
