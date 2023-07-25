@@ -12,7 +12,7 @@ body {
 
 input[type="text"],
 select [id="options"] {
-  padding: 8px 8px ;
+  padding: 8px 8px;
   margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid #394867;
@@ -45,12 +45,9 @@ button[type="submit"]:hover {
 /*************************************** Hompage cards */
 
 .homePageContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* border: 5px solid red; */
-}
 
+  border: 5px solid red;
+}
 
 .cardsContainer {
   display: flex;
@@ -191,12 +188,12 @@ button[type="submit"]:hover {
 
 /************************************ Country page */
 
-.countryPageContainer{
+/* .countryPageContainer{
   border: 2px solid red;
-}
+} */
 
 
-.countryPageHeaderButton{
+.countryPageHeaderButton {
   margin: 10px;
   /* border: 2px solid greenyellow;  */
 }
@@ -247,9 +244,11 @@ canvas {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
@@ -261,11 +260,11 @@ canvas {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8px 8px ;
+  padding: 8px 8px;
   margin: 20px;
   background-color: #394867;
   border-radius: 10px;
-border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .formContainer {
@@ -287,16 +286,16 @@ border: 2px solid red;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 } */
 
-.headerButton{
+.headerButton {
   margin: 10px;
   /* border: 2px solid greenyellow;  */
 }
 
-.cardContainer{
-display: flex;
-justify-content: center;
-margin: 10px;
-/* border: 2px solid red; */
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  /* border: 2px solid red; */
 }
 
 .cardBox {
@@ -343,7 +342,7 @@ margin: 10px;
     color: blue;
   }
 
-.cardsContainer {
+  .cardsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -351,7 +350,7 @@ margin: 10px;
     border: 5px solid rgb(51, 255, 0);
   }
 
-.flip-card {
+  .flip-card {
     background-color: transparent;
     width: 200px;
     height: 300px;
@@ -361,7 +360,7 @@ margin: 10px;
     border-radius: 10px;
     cursor: pointer;
   }
-  
+
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -377,6 +376,3 @@ margin: 10px;
     max-width: 400px;
   }
 }
-
-
-
