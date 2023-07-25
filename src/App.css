@@ -266,16 +266,33 @@ button[type="submit"]:hover {
 
 /* Covid19Cases Page / Cards */
 
-.card {
-  width: 300px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.newCaseContainer{
+  border: 2px solid black;
 }
 
-.card-body {
-  padding: 5px;
+.headerButton{
+  margin: 10px;
+  border: 2px solid greenyellow; 
+}
+
+
+
+.cardContainer{
+display: flex;
+justify-content: center;
+margin: 10px;
+border: 2px solid red;
+}
+
+
+
+
+.cardBox {
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
@@ -285,7 +302,7 @@ button[type="submit"]:hover {
 }
 
 .card-text {
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
   margin-bottom: 5px;
 }
