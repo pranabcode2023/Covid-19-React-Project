@@ -49,7 +49,7 @@ function LoginForm({ functionType }) {
             onChange={(event) => setPassword(event.target.value)}
           />
 
-          <Button variant="primary">Register</Button>
+          <Button variant="primary" type='submit'>Register</Button>
 
           <p>Already Registered? Go for log in</p>
         </form>
@@ -76,7 +76,7 @@ function LoginForm({ functionType }) {
             onChange={(event) => setPassword(event.target.value)}
           />
 
-          <Button variant="primary">Login</Button>
+          <Button variant="primary" type='submit'>Login</Button>
 
           <p>No Account ? Go for Register</p>
         </form>
